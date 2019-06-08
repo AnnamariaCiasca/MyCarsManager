@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".dashboard" android:id="@+id/frameLayout"
+                                             android:background="#80FF80">
+    <View
+            android:id="@+id/testata2"
+            android:layout_width="0dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="70dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+    />
+    <TextView
+            android:text="Dashboard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAlignment="center" android:textColor="@color/colorAccent"
+            android:id="@+id/titolo3" android:fontFamily="@font/bangers"
+            android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
+            android:shadowColor="@android:color/black"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="@+id/testata2" app:layout_constraintStart_toStartOf="@+id/testata2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/testata2"/>
+    <ImageView
+            android:id="@+id/account2"
+            android:layout_width="0dp" android:layout_height="0dp" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt4"
+            app:layout_constraintBottom_toTopOf="@+id/mrg_bot"
+            app:layout_constraintStart_toStartOf="@+id/mrg_lft4"
+            app:layout_constraintTop_toTopOf="@+id/mrg_top" app:srcCompat="@drawable/accountvero"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_lft"
+            android:orientation="vertical" app:layout_constraintGuide_percent="0.38"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_rgt"
+            app:layout_constraintGuide_percent="0.62"
+            android:orientation="vertical"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_lft4"
+            android:orientation="vertical" app:layout_constraintGuide_percent="0.0729927"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_rgt4"
+            android:orientation="vertical" app:layout_constraintGuide_percent="0.31"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_top"
+            android:orientation="horizontal" app:layout_constraintGuide_percent="0.25171"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mrg_bot"
+            android:orientation="horizontal" app:layout_constraintGuide_percent="0.39"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/garage"
+            android:id="@+id/garage2"
+            app:layout_constraintEnd_toStartOf="@+id/mrg_rgt"
+            app:layout_constraintBottom_toTopOf="@+id/mrg_bot" app:layout_constraintStart_toStartOf="@+id/mrg_lft"
+            app:layout_constraintTop_toTopOf="@+id/mrg_top"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/mrg_lft5"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.69"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/mrg_rgt5"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.93"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/euro"
+            android:id="@+id/spese2" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt5"
+            app:layout_constraintTop_toTopOf="@+id/mrg_top"
+            app:layout_constraintStart_toStartOf="@+id/mrg_lft5"
+            app:layout_constraintBottom_toTopOf="@+id/mrg_bot"
+    />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.42"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline2"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.56"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline7"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.59"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline8"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.73"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/cerca"
+            android:id="@+id/cerca2" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt4"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2" app:layout_constraintStart_toStartOf="@+id/mrg_lft4"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+    />
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/park"
+            android:id="@+id/park2" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2" app:layout_constraintStart_toStartOf="@+id/mrg_lft"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+    />
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/servizi"
+            android:id="@+id/service2" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt5"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2" app:layout_constraintStart_toStartOf="@+id/mrg_lft5"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+    />
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/security"
+            android:id="@+id/security2"
+            app:layout_constraintEnd_toStartOf="@+id/mrg_rgt4"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8"
+            app:layout_constraintStart_toStartOf="@+id/mrg_lft4"
+            app:layout_constraintTop_toTopOf="@+id/guideline7"
+    />
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/opzioni"
+            android:id="@+id/options2" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt"
+            app:layout_constraintBottom_toTopOf="@+id/guideline8" app:layout_constraintStart_toStartOf="@+id/mrg_lft"
+            app:layout_constraintTop_toTopOf="@+id/guideline7"
+    />
+</android.support.constraint.ConstraintLayout>
