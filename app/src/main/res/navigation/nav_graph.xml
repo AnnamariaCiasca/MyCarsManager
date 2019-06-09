@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/dashboard3">
+    <fragment android:id="@+id/dashboard3" android:name="com.example.mycarsmanager.dashboard"
+              android:label="fragment_dashboard" tools:layout="@layout/fragment_dashboard">
+        <action android:id="@+id/action_dashboard3_to_account" app:destination="@+id/account"
+        />
+        <action android:id="@+id/action_dashboard3_to_garage" app:destination="@id/garage"/>
+        <action android:id="@+id/action_dashboard3_to_spese" app:destination="@id/spese"/>
+        <action android:id="@+id/action_dashboard3_to_service" app:destination="@id/service"/>
+        <action android:id="@+id/action_dashboard3_to_cerca" app:destination="@id/cerca"/>
+        <action android:id="@+id/action_dashboard3_to_security" app:destination="@id/security"/>
+        <action android:id="@+id/action_dashboard3_to_option" app:destination="@id/option"/>
+        <action android:id="@+id/action_dashboard3_to_park" app:destination="@id/park"/>
+    </fragment>
+    <fragment android:id="@+id/account" android:name="com.example.mycarsmanager.Account"
+              android:label="fragment_account" tools:layout="@layout/fragment_account">
+        <action android:id="@+id/action_account_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/garage" android:name="com.example.mycarsmanager.garage" android:label="fragment_garage"
+              tools:layout="@layout/fragment_garage">
+        <action android:id="@+id/action_garage_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/spese" android:name="com.example.mycarsmanager.spese" android:label="fragment_spese"
+              tools:layout="@layout/fragment_spese">
+        <action android:id="@+id/action_spese_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/cerca" android:name="com.example.mycarsmanager.Cerca" android:label="fragment_cerca"
+              tools:layout="@layout/fragment_cerca">
+        <action android:id="@+id/action_cerca_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/option" android:name="com.example.mycarsmanager.option" android:label="fragment_option"
+              tools:layout="@layout/fragment_option">
+        <action android:id="@+id/action_option_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/park" android:name="com.example.mycarsmanager.park" android:label="fragment_park"
+              tools:layout="@layout/fragment_park">
+        <action android:id="@+id/action_park_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/security" android:name="com.example.mycarsmanager.security"
+              android:label="fragment_security" tools:layout="@layout/fragment_security">
+        <action android:id="@+id/action_security_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/service" android:name="com.example.mycarsmanager.service"
+              android:label="fragment_service" tools:layout="@layout/fragment_service">
+        <action android:id="@+id/action_service_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+</navigation>

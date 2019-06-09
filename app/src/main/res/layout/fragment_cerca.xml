@@ -24,9 +24,18 @@
             android:shadowColor="@android:color/black"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="@+id/testata5" app:layout_constraintStart_toStartOf="@+id/testata5"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintBottom_toBottomOf="@+id/testata5"
     />
+    <View
+            android:id="@+id/testata10"
+            android:layout_width="0dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/guideline49"
+            app:layout_constraintTop_toTopOf="@+id/guideline50"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline9"
                                           android:orientation="vertical"
@@ -52,4 +61,133 @@
             app:layout_constraintStart_toStartOf="@+id/guideline9"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
             app:layout_constraintEnd_toStartOf="@+id/guideline10"/>
+    <CheckBox
+            android:text="RCA"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/checkBox" android:textSize="18sp"
+            android:buttonTint="@color/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="@+id/guideline37"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintBottom_toTopOf="@+id/guideline41"
+    />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline37"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.124487005"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline38"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.18978103"/>
+    <CheckBox
+            android:text="Revisione*"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/checkBox2" android:textSize="18sp"
+            android:buttonTint="@color/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="@+id/guideline37"
+            app:layout_constraintBottom_toTopOf="@+id/guideline41"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline39"
+            app:layout_constraintEnd_toStartOf="@+id/guideline40" android:textAlignment="center"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline39"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.34"/>
+    <CheckBox
+            android:text="Bollo*"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/checkBox3"
+            app:layout_constraintTop_toTopOf="@+id/guideline37"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline41"
+            app:layout_constraintEnd_toStartOf="@+id/guideline42" android:layout_marginEnd="8dp"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline40"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.67"/>
+    <CheckBox
+            android:text="Denunce*"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryDark"
+            android:id="@+id/checkBox4"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@+id/guideline43"
+            app:layout_constraintStart_toStartOf="@+id/guideline45"
+            app:layout_constraintEnd_toStartOf="@+id/guideline46"
+            app:layout_constraintBottom_toTopOf="@+id/guideline44"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline41"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.16826266"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline42"
+                                          android:orientation="vertical" app:layout_constraintGuide_end="10dp"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline43"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.17920657"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline44"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.22298221"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline45"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.36982968"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline46"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.63503647"/>
+    <TextView
+            android:text="Targa"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_targa" android:fontFamily="@font/bangers"
+            android:textColor="@android:color/white" android:shadowDx="0" android:shadowDy="4"
+            android:shadowRadius="4" android:shadowColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/guideline46"
+            app:layout_constraintStart_toStartOf="@+id/guideline45"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline49" app:layout_constraintHorizontal_bias="0.0"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline47"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.42092457"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline48"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.5790754"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline49"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.3"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline50"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.24"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edt_targa"
+            app:layout_constraintStart_toStartOf="@+id/guideline39"
+            app:layout_constraintEnd_toStartOf="@+id/guideline40" android:hint="es. AA000AA"
+            app:layout_constraintTop_toTopOf="@+id/guideline51"
+            app:layout_constraintBottom_toTopOf="@+id/guideline52"
+            android:textColor="@color/colorPrimaryDark" android:textAlignment="center" android:textAllCaps="true"
+            android:maxLength="7"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline51"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.31"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline52"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.37"/>
 </android.support.constraint.ConstraintLayout>
