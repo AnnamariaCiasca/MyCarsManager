@@ -6,6 +6,22 @@
                                              android:layout_height="match_parent"
                                              tools:context=".park" android:id="@+id/frameLayout3"
                                              android:background="#80FF80">
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline17"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.02676399"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline18"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.14841849"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline19"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.01504788"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline20"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.08344733"/>
     <View
             android:id="@+id/testata6"
             android:layout_width="0dp"
@@ -26,5 +42,14 @@
             app:layout_constraintEnd_toEndOf="@+id/testata6" app:layout_constraintStart_toStartOf="@+id/testata6"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="@+id/testata6"
+    />
+    <ImageView
+            android:src="@drawable/menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/menu"
+            app:layout_constraintTop_toTopOf="@id/guideline19"
+            app:layout_constraintBottom_toTopOf="@+id/guideline20" app:layout_constraintEnd_toStartOf="@+id/guideline18"
+            app:layout_constraintStart_toStartOf="@+id/guideline17"
     />
 </android.support.constraint.ConstraintLayout>

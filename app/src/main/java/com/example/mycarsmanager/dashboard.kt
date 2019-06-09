@@ -20,9 +20,6 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  */
 class dashboard : Fragment() {
-    // TODO: Rename and change types of parameters
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +39,5 @@ class dashboard : Fragment() {
         service2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_service)}
         security2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_security)}
         options2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_option)}
-
     }
 }

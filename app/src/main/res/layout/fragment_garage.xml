@@ -25,4 +25,29 @@
             app:layout_constraintEnd_toEndOf="@+id/testata3" app:layout_constraintStart_toStartOf="@+id/testata3"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="@+id/testata3"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline13"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.02676399"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline14"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.14841849"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline15"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.01504788"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline16"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.08344733"/>
+    <ImageView
+            android:src="@drawable/menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/menu"
+            app:layout_constraintTop_toTopOf="@+id/guideline15"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16" app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+    />
 </android.support.constraint.ConstraintLayout>

@@ -27,4 +27,29 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="@+id/testata5"
     />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline9"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.02676399"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline10"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.14841849"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline11"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.01504788"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline12"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.08344733"/>
+    <ImageView
+            android:src="@drawable/menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/menu"
+            app:layout_constraintTop_toTopOf="@+id/guideline11"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintBottom_toTopOf="@+id/guideline12"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"/>
 </android.support.constraint.ConstraintLayout>
