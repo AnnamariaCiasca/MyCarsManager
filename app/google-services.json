@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "944543674348",
+    "firebase_url": "https://manageyourcars-66bc7.firebaseio.com",
+    "project_id": "manageyourcars-66bc7",
+    "storage_bucket": "manageyourcars-66bc7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944543674348:android:e3f2c743e48da4a6",
+        "android_client_info": {
+          "package_name": "com.example.mycarsmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944543674348-hcdfuol2ko0tefqhohde7h2vutg10e3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mycarsmanager",
+            "certificate_hash": "21f955a0f53091cd285194ac5aa36ee564a11df1"
+          }
+        },
+        {
+          "client_id": "944543674348-8ebtk9ei1nscu64hj3amqqtt6j0pq5ao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATq4UFXP7OKZyl70ynof4eEsqaoUCnhSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944543674348-8ebtk9ei1nscu64hj3amqqtt6j0pq5ao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
