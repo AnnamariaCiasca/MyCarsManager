@@ -1,7 +1,5 @@
 package com.example.mycarsmanager
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -9,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import kotlinx.android.synthetic.main.fragment_cerca.*
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -34,5 +31,9 @@ class Cerca : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         menu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_cerca_to_dashboard3) }
+
     }
+
+
+
 }

@@ -4,51 +4,50 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context=".Account" android:background="#80FF80">
-
+                                             tools:context=".account" android:orientation="vertical"
+                                             android:background="#80FF80">
     <View
-            android:id="@+id/testata"
+            android:id="@+id/testata12"
             android:layout_width="0dp"
             android:background="@color/colorPrimaryDark"
             android:layout_height="70dp" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
     />
     <TextView
-            android:text="Account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textAlignment="center" android:textColor="@color/colorAccent"
-            android:id="@+id/titolo2" android:fontFamily="@font/bangers"
+            android:id="@+id/titolo11" android:fontFamily="@font/carter_one"
             android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
             android:shadowColor="@android:color/black"
             android:textSize="48sp"
-            app:layout_constraintEnd_toEndOf="@+id/testata" app:layout_constraintStart_toStartOf="@+id/testata"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintBottom_toBottomOf="@+id/testata"/>
+            android:text="Account" app:layout_constraintEnd_toEndOf="@+id/testata12"
+            app:layout_constraintStart_toStartOf="@+id/testata12"
+            app:layout_constraintTop_toTopOf="@+id/testata12" app:layout_constraintBottom_toBottomOf="@+id/testata12"/>
     <ImageView
             android:src="@drawable/menu"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/menu"
-            app:layout_constraintTop_toTopOf="@+id/guideline5" app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintBottom_toTopOf="@+id/guideline6" app:layout_constraintStart_toStartOf="@+id/guideline4"
-    />
+            android:id="@+id/menu3"
+            app:layout_constraintEnd_toStartOf="@+id/guideline58"
+            app:layout_constraintTop_toTopOf="@+id/guideline60"
+            app:layout_constraintStart_toStartOf="@+id/guideline59"
+            app:layout_constraintBottom_toTopOf="@+id/guideline61"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline3"
+                                          android:id="@+id/guideline58"
                                           android:orientation="vertical"
                                           app:layout_constraintGuide_percent="0.14841849"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline4"
+                                          android:id="@+id/guideline59"
                                           android:orientation="vertical"
                                           app:layout_constraintGuide_percent="0.02676399"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline5"
+                                          android:id="@+id/guideline60"
                                           android:orientation="horizontal"
                                           app:layout_constraintGuide_percent="0.01504788"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline6"
+                                          android:id="@+id/guideline61"
                                           android:orientation="horizontal"
                                           app:layout_constraintGuide_percent="0.08344733"/>
-
 </android.support.constraint.ConstraintLayout>

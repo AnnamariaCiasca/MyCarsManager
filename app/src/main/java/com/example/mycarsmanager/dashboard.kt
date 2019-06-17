@@ -1,13 +1,12 @@
 package com.example.mycarsmanager
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
@@ -31,13 +30,21 @@ class dashboard : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        account2.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_account)}
-        garage2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_garage)}
-        spese2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_spese)}
-        cerca2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_cerca)}
-        park2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_park)}
-        service2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_service)}
-        security2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_security)}
-        options2.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_option)}
+
+        btn_garage.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_garage)}
+        btn_spese.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_spese)}
+        btn_cerca.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_cerca)}
+        btn_park.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_park)}
+        btn_service.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_service)}
+        btn_security.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_security)}
+        btn_option.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_option)}
+
+
+        if(FirebaseAuth.getInstance().currentUser != null){
+            btn_account.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_account)}
+        }else{
+            btn_account.setOnClickListener{Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_registro)}
+        }
+
     }
 }

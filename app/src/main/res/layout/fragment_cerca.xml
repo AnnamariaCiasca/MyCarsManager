@@ -19,14 +19,13 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textAlignment="center" android:textColor="@color/colorAccent"
-            android:id="@+id/titolo5" android:fontFamily="@font/bangers"
+            android:id="@+id/titolo5" android:fontFamily="@font/carter_one"
             android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
             android:shadowColor="@android:color/black"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="@+id/testata5" app:layout_constraintStart_toStartOf="@+id/testata5"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintBottom_toBottomOf="@+id/testata5"
-    />
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/testata5"/>
     <View
             android:id="@+id/testata10"
             android:layout_width="0dp"
@@ -146,14 +145,15 @@
             android:text="Targa"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_targa" android:fontFamily="@font/bangers"
+            android:id="@+id/txt_targa" android:fontFamily="@font/carter_one"
             android:textColor="@android:color/white" android:shadowDx="0" android:shadowDy="4"
             android:shadowRadius="4" android:shadowColor="@android:color/black"
             app:layout_constraintEnd_toStartOf="@+id/guideline46"
             app:layout_constraintStart_toStartOf="@+id/guideline45"
             android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline49" app:layout_constraintHorizontal_bias="0.0"/>
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline49" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/guideline50"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline47"
                                           android:orientation="vertical"
@@ -173,14 +173,15 @@
     <EditText
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textCapCharacters"
             android:ems="10"
             android:id="@+id/edt_targa"
+            android:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="@+id/guideline39"
             app:layout_constraintEnd_toStartOf="@+id/guideline40" android:hint="es. AA000AA"
             app:layout_constraintTop_toTopOf="@+id/guideline51"
             app:layout_constraintBottom_toTopOf="@+id/guideline52"
-            android:textColor="@color/colorPrimaryDark" android:textAlignment="center" android:textAllCaps="true"
+            android:textColor="@color/colorPrimaryDark" android:textAlignment="center"
             android:maxLength="7"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline51"
@@ -190,4 +191,28 @@
                                           android:id="@+id/guideline52"
                                           android:orientation="horizontal"
                                           app:layout_constraintGuide_percent="0.37"/>
+    <Button
+            android:text="Cerca"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/btn_crc"
+            android:background="@color/colorPrimaryDark"
+            android:shadowColor="@android:color/black" android:shadowDy="4"
+            android:shadowRadius="4" android:textSize="24sp" android:textColor="@android:color/white"
+            tools:visibility="visible"
+            android:fontFamily="@font/carter_one"
+            app:layout_constraintTop_toTopOf="@+id/guideline52"
+            app:layout_constraintEnd_toStartOf="@+id/guideline46"
+            app:layout_constraintStart_toStartOf="@+id/guideline45"
+            app:layout_constraintBottom_toTopOf="@+id/guideline53" android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" android:layout_marginTop="4dp" android:layout_marginBottom="4dp"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline53"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.44596443"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="435dp"
+            tools:layout_editor_absoluteX="156dp" android:id="@+id/provola"/>
 </android.support.constraint.ConstraintLayout>

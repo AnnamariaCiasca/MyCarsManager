@@ -5,8 +5,6 @@
             app:startDestination="@id/dashboard3">
     <fragment android:id="@+id/dashboard3" android:name="com.example.mycarsmanager.dashboard"
               android:label="fragment_dashboard" tools:layout="@layout/fragment_dashboard">
-        <action android:id="@+id/action_dashboard3_to_account" app:destination="@+id/account"
-        />
         <action android:id="@+id/action_dashboard3_to_garage" app:destination="@id/garage"/>
         <action android:id="@+id/action_dashboard3_to_spese" app:destination="@id/spese"/>
         <action android:id="@+id/action_dashboard3_to_service" app:destination="@id/service"/>
@@ -14,10 +12,8 @@
         <action android:id="@+id/action_dashboard3_to_security" app:destination="@id/security"/>
         <action android:id="@+id/action_dashboard3_to_option" app:destination="@id/option"/>
         <action android:id="@+id/action_dashboard3_to_park" app:destination="@id/park"/>
-    </fragment>
-    <fragment android:id="@+id/account" android:name="com.example.mycarsmanager.Account"
-              android:label="fragment_account" tools:layout="@layout/fragment_account">
-        <action android:id="@+id/action_account_to_dashboard3" app:destination="@id/dashboard3"/>
+        <action android:id="@+id/action_dashboard3_to_registro" app:destination="@id/registro"/>
+        <action android:id="@+id/action_dashboard3_to_account" app:destination="@id/account"/>
     </fragment>
     <fragment android:id="@+id/garage" android:name="com.example.mycarsmanager.garage" android:label="fragment_garage"
               tools:layout="@layout/fragment_garage">
@@ -46,5 +42,21 @@
     <fragment android:id="@+id/service" android:name="com.example.mycarsmanager.service"
               android:label="fragment_service" tools:layout="@layout/fragment_service">
         <action android:id="@+id/action_service_to_dashboard3" app:destination="@id/dashboard3"/>
+    </fragment>
+    <fragment android:id="@+id/login" android:name="com.example.mycarsmanager.login" android:label="fragment_login"
+              tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_login_to_registro" app:destination="@id/registro"/>
+        <action android:id="@+id/action_login_to_dashboard3" app:destination="@id/dashboard3"/>
+        <action android:id="@+id/action_login_to_account" app:destination="@id/account"/>
+    </fragment>
+    <fragment android:id="@+id/registro" android:name="com.example.mycarsmanager.registro"
+              android:label="fragment_registro" tools:layout="@layout/fragment_registro">
+        <action android:id="@+id/action_registro_to_dashboard3" app:destination="@id/dashboard3"/>
+        <action android:id="@+id/action_registro_to_login" app:destination="@id/login"/>
+    </fragment>
+    <fragment android:id="@+id/account" android:name="com.example.mycarsmanager.account"
+              android:label="fragment_account" tools:layout="@layout/fragment_account">
+        <action android:id="@+id/action_account_to_dashboard3" app:destination="@id/dashboard3"/>
+        <action android:id="@+id/action_account_to_login2" app:destination="@id/login"/>
     </fragment>
 </navigation>

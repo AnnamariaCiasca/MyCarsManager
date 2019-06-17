@@ -35,14 +35,14 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textAlignment="center" android:textColor="@color/colorAccent"
-            android:id="@+id/titolo9" android:fontFamily="@font/bangers"
+            android:id="@+id/titolo9" android:fontFamily="@font/carter_one"
             android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
             android:shadowColor="@android:color/black"
-            android:textSize="48sp"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="@+id/testata9" app:layout_constraintStart_toStartOf="@+id/testata9"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toBottomOf="@+id/testata9"
-    />
+            app:layout_constraintTop_toTopOf="parent"/>
     <ImageView
             android:src="@drawable/menu"
             android:layout_width="0dp"

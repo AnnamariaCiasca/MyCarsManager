@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_account.*
 
 
@@ -20,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
  * A simple [Fragment] subclass.
  *
  */
-class Account : Fragment() {
+class account : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,7 +33,10 @@ class Account : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        menu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_account_to_dashboard3) }
+
+        menu3.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_account_to_dashboard3) }
+
+
     }
 
 }
