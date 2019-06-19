@@ -12,12 +12,6 @@ import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_registro.*
 
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 /**
  * A simple [Fragment] subclass.
  *
@@ -38,12 +32,12 @@ class registro : Fragment() {
         txt_already.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_registro_to_login) }
 
         btn_registra.setOnClickListener {
-            registra()
+            registra(view)
         }
 
     }
 
-    private fun registra(){
+    private fun registra(view: View){
 
         val email = etxt_mail.text.toString()
         val psw = etxt_psw.text.toString()
@@ -58,7 +52,10 @@ class registro : Fragment() {
 
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, psw)
             .addOnCompleteListener {
-                if (!it.isSuccessful) return@addOnCompleteListener
+                if (!it.isSuccessful){
+                    return@addOnCompleteListener
+                }
+                Navigation.findNavController(view).navigate(R.id.action_registro_to_login)
             }
             .addOnFailureListener {
                 Toast.makeText(activity, "Error: ${it.message}", Toast.LENGTH_SHORT).show()

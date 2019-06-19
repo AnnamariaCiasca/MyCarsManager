@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.etxt_mail
 import kotlinx.android.synthetic.main.fragment_registro.*
@@ -28,6 +29,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class login : Fragment() {
 
+    private val mStore = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
