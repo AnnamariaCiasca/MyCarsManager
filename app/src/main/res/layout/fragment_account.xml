@@ -50,32 +50,44 @@
                                           android:id="@+id/guideline61"
                                           android:orientation="horizontal"
                                           app:layout_constraintGuide_percent="0.08344733"/>
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="0dp"
-            android:layout_height="0dp" tools:src="@tools:sample/avatars"
+            android:layout_height="0dp" android:id="@+id/profile_round"
+            app:layout_constraintEnd_toStartOf="@+id/guideline62"
+            app:layout_constraintStart_toStartOf="@+id/guideline63"
+            app:layout_constraintBottom_toTopOf="@+id/guideline64"
+            app:layout_constraintTop_toBottomOf="@+id/testata12"/>
+
+    <Button
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/img_profile"
-            app:layout_constraintTop_toBottomOf="@+id/titolo11"
-            app:layout_constraintBottom_toTopOf="@+id/guideline64" app:layout_constraintEnd_toStartOf="@+id/guideline62"
-            app:layout_constraintStart_toStartOf="@+id/guideline63"/>
+            app:layout_constraintTop_toBottomOf="@+id/testata12"
+            app:layout_constraintEnd_toStartOf="@+id/guideline62"
+            app:layout_constraintStart_toStartOf="@+id/guideline63" android:background="@drawable/roundedphoto"
+            android:text="Seleziona Foto" android:textColor="@android:color/white" android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@+id/guideline64" android:layout_marginTop="8dp"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline62"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.62287104"/>
+                                          app:layout_constraintGuide_percent="0.65"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline63"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.37712896"/>
+                                          app:layout_constraintGuide_percent="0.37"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline64"
                                           android:orientation="horizontal"
-                                          app:layout_constraintGuide_percent="0.24487004"/>
+                                          app:layout_constraintGuide_percent="0.26"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/info_account" android:layout_marginTop="8dp"
+            android:id="@+id/info_account"
             app:layout_constraintTop_toBottomOf="@+id/img_profile" android:gravity="center|top">
         <TextView
                 android:text="Nome Utente"

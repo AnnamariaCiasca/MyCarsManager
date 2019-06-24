@@ -1,18 +1,22 @@
 package com.example.mycarsmanager
 
 
-import android.app.Dialog
+import android.app.ProgressDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_account.*
+
 
 
 /**
@@ -24,12 +28,13 @@ class account : Fragment() {
     private val mAuth = FirebaseAuth.getInstance()
     private val mStore = FirebaseFirestore.getInstance()
     private val mStorage = FirebaseStorage.getInstance()
-
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
     private val mail = utente?.email
     private val docutente = mStore.collection("Utenti").document("$id")
-
+    private val filename= "img_profile_$id"
+    private val ref = mStorage.getReference("/img_profile/$filename")
+    private var imgURI: Uri? =null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +52,13 @@ class account : Fragment() {
                 if (it.result?.exists()!!) {
                     val username = it.result?.getString("Nome").toString()
                     val phone = it.result?.getString("Telefono").toString()
+                    val photo = it.result?.getString("img_url").toString()
+
+                    if ( photo != ""){
+                        //download e carico foto
+                        img_profile.alpha=0f
+                        downloadphoto(photo)
+                    }
 
                     etxt_name.setText(username)
                     etxt_phone.setText(phone)
@@ -54,7 +66,8 @@ class account : Fragment() {
                     val user = hashMapOf(
                         "Email" to "$mail",
                         "Nome" to "",
-                        "Telefono" to ""
+                        "Telefono" to "",
+                        "img_url" to ""
                     )
                     docutente.set(user as Map<String, Any>)
                 }
@@ -73,7 +86,7 @@ class account : Fragment() {
         }
 
         img_profile.setOnClickListener {
-            showDialogPic()
+            selectphoto()
         }
     }
 
@@ -87,21 +100,58 @@ class account : Fragment() {
         docutente.update(user as Map<String, Any>)
     }
 
-    private fun showDialogPic(){
-        val dialog = Dialog(activity)
-        dialog.setContentView(R.layout.dialog_camera_layout)
-        dialog.show()
+    private fun selectphoto(){
+            val galleryIntent = Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            startActivityForResult(galleryIntent, 1)
+    }
 
-        val cancel = dialog.findViewById<Button>(R.id.btn_cancel)
-        val gall = dialog.findViewById<Button>(R.id.btn_gallery)
-        val cam = dialog.findViewById<Button>(R.id.btn_camera)
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
-        cancel.setOnClickListener { dialog.dismiss() }
-
-        gall.setOnClickListener {  }
-
-        cam.setOnClickListener {  }
-
+        if (requestCode == 1){
+            if (data != null){
+            imgURI = data.data
+                val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, imgURI)
+                profile_round.setImageBitmap(bitmap)
+                img_profile.alpha=0f
+                caricafoto()
+                }
         }
+    }
+
+    private fun caricafoto(){
+        val progressDialog = ProgressDialog(activity)
+        progressDialog.setTitle("Caricamento")
+        progressDialog.setMessage("Caricamento Immagine in corso...")
+        progressDialog.setCancelable(false)
+
+
+
+        ref.putFile(imgURI!!)
+            .addOnProgressListener {
+                progressDialog.show()
+            }
+            .addOnCompleteListener {
+                progressDialog.dismiss()
+            }
+            .addOnSuccessListener {
+                val  result = it.metadata!!.reference!!.downloadUrl
+                result.addOnSuccessListener {
+                    var link = it.toString()
+
+                    val urlimg = hashMapOf(
+                        "img_url" to "$link"
+                    )
+
+                    docutente.update(urlimg as Map<String, Any>)
+                }
+
+            }
+
+    }
+
+    private fun downloadphoto(url:String){
+        Picasso.with(activity).load(url).into(profile_round)
+    }
 
 }
