@@ -25,15 +25,11 @@ import kotlinx.android.synthetic.main.fragment_account.*
  */
 class account : Fragment() {
 
-    private val mAuth = FirebaseAuth.getInstance()
-    private val mStore = FirebaseFirestore.getInstance()
-    private val mStorage = FirebaseStorage.getInstance()
-    private val utente = mAuth?.currentUser
+    private val utente = FirebaseAuth.getInstance().currentUser
+    private val docutente = FirebaseFirestore.getInstance().collection("Utenti").document("$id")
+    private val ref = FirebaseStorage.getInstance().getReference("/img_profile/$filename")
     private val id = utente?.uid
-    private val mail = utente?.email
-    private val docutente = mStore.collection("Utenti").document("$id")
     private val filename= "img_profile_$id"
-    private val ref = mStorage.getReference("/img_profile/$filename")
     private var imgURI: Uri? =null
 
     override fun onCreateView(
@@ -53,16 +49,20 @@ class account : Fragment() {
                     val username = it.result?.getString("Nome").toString()
                     val phone = it.result?.getString("Telefono").toString()
                     val photo = it.result?.getString("img_url").toString()
+                    val mail = it.result?.getString("Email").toString()
 
                     if ( photo != ""){
                         //download e carico foto
-                        img_profile.alpha=0f
                         downloadphoto(photo)
+                        img_profile.alpha=0f
                     }
 
+                    etxt_mail.setText(mail)
                     etxt_name.setText(username)
                     etxt_phone.setText(phone)
                 } else {
+                    val mail = utente?.email
+
                     val user = hashMapOf(
                         "Email" to "$mail",
                         "Nome" to "",
@@ -70,15 +70,15 @@ class account : Fragment() {
                         "img_url" to ""
                     )
                     docutente.set(user as Map<String, Any>)
+                    etxt_mail.setText(mail)
                 }
             }
-        etxt_mail.setText(mail)
 
         menu3.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_account_to_dashboard3)
         }
         btn_out.setOnClickListener {
-            mAuth.signOut()
+            FirebaseAuth.getInstance().signOut()
             Navigation.findNavController(view).navigate(R.id.action_account_to_login2)
         }
         btn_change.setOnClickListener {
