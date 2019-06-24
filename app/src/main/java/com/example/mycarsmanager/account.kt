@@ -25,11 +25,14 @@ import kotlinx.android.synthetic.main.fragment_account.*
  */
 class account : Fragment() {
 
-    private val utente = FirebaseAuth.getInstance().currentUser
-    private val docutente = FirebaseFirestore.getInstance().collection("Utenti").document("$id")
-    private val ref = FirebaseStorage.getInstance().getReference("/img_profile/$filename")
+    private val mAuth = FirebaseAuth.getInstance()
+    private val mStore = FirebaseFirestore.getInstance()
+    private val mStorage = FirebaseStorage.getInstance()
+    private val utente = mAuth?.currentUser
     private val id = utente?.uid
+    private val docutente = mStore.collection("Utenti").document("$id")
     private val filename= "img_profile_$id"
+    private val ref = mStorage.getReference("/img_profile/$filename")
     private var imgURI: Uri? =null
 
     override fun onCreateView(
@@ -78,7 +81,7 @@ class account : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_account_to_dashboard3)
         }
         btn_out.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
+            mAuth.signOut()
             Navigation.findNavController(view).navigate(R.id.action_account_to_login2)
         }
         btn_change.setOnClickListener {
