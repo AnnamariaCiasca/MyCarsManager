@@ -5,6 +5,14 @@
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
                                              tools:context=".garage" android:background="#80FF80">
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline66"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.8515815"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline65"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.9756691"/>
     <View
             android:id="@+id/testata3"
             android:layout_width="0dp"
@@ -32,7 +40,7 @@
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline14"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.14841849"/>
+                                          app:layout_constraintGuide_percent="0.15085158"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline15"
                                           android:orientation="horizontal"
@@ -50,4 +58,18 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline16" app:layout_constraintEnd_toStartOf="@+id/guideline14"
             app:layout_constraintStart_toStartOf="@+id/guideline13"
     />
+    <ImageView
+            android:src="@drawable/add_circle_green_512"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/btn_dialog"
+            app:layout_constraintTop_toTopOf="@+id/guideline15" app:layout_constraintEnd_toStartOf="@+id/guideline65"
+            app:layout_constraintStart_toStartOf="@+id/guideline66"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testata3" android:id="@+id/car_list"/>
 </android.support.constraint.ConstraintLayout>
