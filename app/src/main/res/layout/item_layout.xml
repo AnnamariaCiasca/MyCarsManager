@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:background="#80FF80">
+
+    <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="#80FF80">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center" android:background="#80FF80">
+            <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:srcCompat="@drawable/common_google_signin_btn_icon_dark_focused" android:id="@+id/img_car"
+                    android:layout_margin="8dp"/>
+            <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/txtModel"
+                        android:text="Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:text="Occupation"
+                        android:id="@+id/txtOwner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
