@@ -19,6 +19,7 @@
               tools:layout="@layout/fragment_garage">
         <action android:id="@+id/action_garage_to_dashboard3" app:destination="@id/dashboard3"/>
         <action android:id="@+id/action_garage_to_addcar" app:destination="@id/addcar"/>
+        <action android:id="@+id/action_garage_to_description_car" app:destination="@id/description_car"/>
     </fragment>
     <fragment android:id="@+id/spese" android:name="com.example.mycarsmanager.spese" android:label="fragment_spese"
               tools:layout="@layout/fragment_spese">
@@ -64,4 +65,6 @@
     >
         <action android:id="@+id/action_addcar_to_garage" app:destination="@id/garage"/>
     </fragment>
+    <fragment android:id="@+id/description_car" android:name="com.example.mycarsmanager.description_car"
+              android:label="fragment_description_car" tools:layout="@layout/fragment_description_car"/>
 </navigation>

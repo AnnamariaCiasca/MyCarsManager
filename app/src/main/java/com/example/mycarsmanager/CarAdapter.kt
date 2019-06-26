@@ -1,10 +1,14 @@
 package com.example.mycarsmanager
 
+import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.Navigation
 
 class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>(){
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -12,8 +16,26 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
         return ViewHolder(v)    }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        p0.txtmodel?.text= carList[p1].Model
-        p0.txtowner?.text= carList[p1].Owner    }
+        p0.txtmodel?.text = carList[p1].Model
+        p0.txtowner?.text = carList[p1].Owner
+
+        val model = p0.txtmodel?.text
+        val own = p0.txtowner?.text
+
+        p0.item.setOnClickListener {
+            val info = Bundle()
+            info.putString("Model", "$model")
+            info.putString("Owner", "$own")
+
+            val fragment = Fragment()
+
+            fragment.arguments = info
+
+            Navigation.findNavController(it).navigate(R.id.action_garage_to_description_car)
+
+        }
+
+    }
 
     override fun getItemCount(): Int {
         return carList.size
@@ -23,6 +45,8 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val txtmodel = itemView.findViewById<TextView>(R.id.txtModel)
         val txtowner = itemView.findViewById<TextView>(R.id.txtOwner)
+        val item = itemView.findViewById<LinearLayout>(R.id.item_body)
     }
 
 }
+
