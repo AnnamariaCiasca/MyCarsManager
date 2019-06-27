@@ -27,11 +27,7 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
             info.putString("Model", "$model")
             info.putString("Owner", "$own")
 
-            val fragment = Fragment()
-
-            fragment.arguments = info
-
-            Navigation.findNavController(it).navigate(R.id.action_garage_to_description_car)
+            Navigation.findNavController(it).navigate(R.id.action_garage_to_description_car, info)
 
         }
 

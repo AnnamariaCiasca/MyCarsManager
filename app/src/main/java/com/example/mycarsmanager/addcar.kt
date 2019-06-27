@@ -48,7 +48,7 @@ class addcar : Fragment() {
                 "Targa" to targa,
                 "Scadenza RCA" to scadRCA,
                 "Scadenza Bollo" to scadBollo,
-                "Ultima Rev." to lastRev
+                "Ultima Rev" to lastRev
             )
 
             val doc_name = docucar.document("$modello _ $owner")
