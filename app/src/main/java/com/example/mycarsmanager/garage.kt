@@ -48,8 +48,9 @@ class garage : Fragment() {
                 for(document in it){
                     val model = document.getString("Modello").toString()
                     val owner= document.getString("Owner").toString()
+                    val url = document.getString("img_url").toString()
 
-                    val macchina= Car("$model","$owner")
+                    val macchina= Car("$model","$owner", "$url")
 
                     cars.add(macchina)
                 }

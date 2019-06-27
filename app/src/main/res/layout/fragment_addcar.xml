@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-              android:layout_height="match_parent" android:orientation="vertical"
-              android:textAlignment="center" android:background="#80FF80" android:layout_weight="0"
-              android:gravity="center|top">
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent" android:orientation="vertical"
+                                             android:textAlignment="center" android:background="#80FF80"
+                                             android:layout_weight="0"
+                                             android:gravity="center|top">
 
     <View
 
@@ -23,15 +25,41 @@
             android:textSize="48sp"
             android:text="Aggiungi" app:layout_constraintEnd_toEndOf="@+id/view"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/testata12"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"/>
+            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintBottom_toBottomOf="@+id/view"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/img_car"
+            app:layout_constraintBottom_toTopOf="@+id/guideline68" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline67"
+            android:layout_marginStart="16dp" android:layout_marginEnd="16dp"
+            app:srcCompat="@drawable/rounded_btnreg" android:layout_marginTop="8dp"/>
+    <TextView
+            android:text="Seleziona Foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txt_img"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline67" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout" app:layout_constraintEnd_toEndOf="@+id/img_car"
+            app:layout_constraintStart_toStartOf="@+id/img_car" android:textStyle="bold"
+            android:textColor="@android:color/white" android:textSize="36sp"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline67"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.10670315"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline68"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.3119015"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="0dp" app:layout_constraintTop_toBottomOf="@+id/view"
+            android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center" android:id="@+id/linearLayout">
+            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center" android:id="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="@+id/guideline68">
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"

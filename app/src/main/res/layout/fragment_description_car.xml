@@ -24,6 +24,22 @@
             android:text="Aggiungi"
             app:layout_constraintEnd_toEndOf="@+id/testata" app:layout_constraintStart_toStartOf="@+id/testata"
             app:layout_constraintTop_toTopOf="@+id/testata" app:layout_constraintBottom_toBottomOf="@+id/testata"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline69"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.10670315"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline70"
+                                          android:orientation="horizontal"
+                                          app:layout_constraintGuide_percent="0.31"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" android:id="@+id/img_car"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/guideline69"
+            app:layout_constraintBottom_toTopOf="@+id/guideline70"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
@@ -31,12 +47,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/testata" android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/img_car">
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/model">
+                android:layout_height="wrap_content" android:id="@+id/model" android:layout_marginTop="8dp">
             <TextView
                     android:text="Modello"
                     android:layout_width="wrap_content"
@@ -53,7 +70,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/owner">
+                android:layout_height="wrap_content" android:id="@+id/owner" android:layout_marginTop="8dp">
             <TextView
                     android:text="Proprietario"
                     android:layout_width="wrap_content"
@@ -70,7 +87,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/targa">
+                android:layout_height="wrap_content" android:id="@+id/targa" android:layout_marginTop="8dp">
             <TextView
                     android:text="Targa"
                     android:layout_width="wrap_content"
@@ -87,7 +104,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/Bollo">
+                android:layout_height="wrap_content" android:id="@+id/Bollo" android:layout_marginTop="8dp">
             <TextView
                     android:text="Bollo"
                     android:layout_width="wrap_content"
@@ -103,7 +120,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/RCA">
+                android:layout_height="wrap_content" android:id="@+id/RCA" android:layout_marginTop="8dp">
             <TextView
                     android:text="RCA"
                     android:layout_width="wrap_content"
@@ -119,7 +136,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/Revisione">
+                android:layout_height="wrap_content" android:id="@+id/Revisione" android:layout_marginTop="8dp">
             <TextView
                     android:text="Revisione"
                     android:layout_width="wrap_content"
@@ -131,6 +148,27 @@
                     android:inputType="date"
                     android:ems="10"
                     android:id="@+id/etxt_rev" android:layout_weight="0" android:textAlignment="center"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/btn">
+            <Button
+                    android:text="Elimina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/btn_delete" android:layout_weight="1"
+                    android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
+                    android:textColor="@android:color/white" android:textStyle="bold" android:textSize="18sp"
+                    android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="4"
+                    android:shadowRadius="4"/>
+            <Button
+                    android:text="Modifica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/btn_change" android:layout_weight="1"
+                    android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
+                    android:textColor="@android:color/white" android:textStyle="bold" android:textSize="18sp"
+                    android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="4"
+                    android:shadowRadius="4"/>
         </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

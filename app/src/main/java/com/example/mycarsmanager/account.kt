@@ -140,7 +140,7 @@ class account : Fragment() {
             .addOnSuccessListener {
                 val  result = it.metadata!!.reference!!.downloadUrl
                 result.addOnSuccessListener {
-                    var link = it.toString()
+                    val link = it.toString()
 
                     val urlimg = hashMapOf(
                         "img_url" to "$link"

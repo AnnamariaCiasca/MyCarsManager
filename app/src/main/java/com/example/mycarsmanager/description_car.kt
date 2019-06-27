@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_description_car.*
 
 
@@ -37,7 +38,7 @@ class description_car : Fragment() {
 
         val model = arguments?.getString("Model")
         val owner = arguments?.getString("Owner")
-        val docucar = docutente.collection("Vettura").document("$model _ $owner")
+        val docucar = docutente.collection("Vettura").document(model+"_"+owner)
 
         txt_macchina.text=model
 
@@ -49,6 +50,9 @@ class description_car : Fragment() {
                 val bol = it.result?.getString("Scadenza Bollo").toString()
                 val rca = it.result?.getString("Scadenza RCA").toString()
                 val rev = it.result?.getString("Ultima Rev").toString()
+                val url = it.result?.getString("img_url").toString()
+
+                Picasso.with(activity).load(url).into(img_car)
 
                 etxt_model.setText(mod)
                 etxt_owner.setText(own)

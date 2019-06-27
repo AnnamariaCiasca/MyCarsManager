@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.navigation.Navigation
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
 
 class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.ViewHolder>(){
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -18,6 +20,8 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         p0.txtmodel?.text = carList[p1].Model
         p0.txtowner?.text = carList[p1].Owner
+        val url = carList[p1].url
+        Picasso.with(null).load(url).into(p0.img_car)
 
         val model = p0.txtmodel?.text
         val own = p0.txtowner?.text
@@ -41,6 +45,7 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val txtmodel = itemView.findViewById<TextView>(R.id.txtModel)
         val txtowner = itemView.findViewById<TextView>(R.id.txtOwner)
+        val img_car = itemView.findViewById<CircleImageView>(R.id.img_car)
         val item = itemView.findViewById<LinearLayout>(R.id.item_body)
     }
 
