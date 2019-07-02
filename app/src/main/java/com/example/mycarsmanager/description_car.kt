@@ -1,12 +1,13 @@
 package com.example.mycarsmanager
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -38,7 +39,7 @@ class description_car : Fragment() {
 
         val model = arguments?.getString("Model")
         val owner = arguments?.getString("Owner")
-        val docucar = docutente.collection("Vettura").document(model+"_"+owner)
+        val docucar = docutente.collection("Vettura").document("$model"+"_$owner")
 
         txt_macchina.text=model
 
@@ -57,10 +58,35 @@ class description_car : Fragment() {
                 etxt_model.setText(mod)
                 etxt_owner.setText(own)
                 etxt_targa.setText(targa)
-                etxt_bollo.setText(bol)
-                etxt_rca.setText(rca)
+                txt_bollo.setText(bol)
+                txt_rca.setText(rca)
                 etxt_rev.setText(rev)
             }
+
+        btn_delete.setOnClickListener {
+            dialog()
+        }
+
+    }
+
+
+    private fun dialog(){
+        val alert = AlertDialog.Builder(activity)
+        val mod = txt_macchina.text
+        alert.setTitle("Sei Sicuro?")
+            .setMessage("Sicuro di voler Cancellare $mod ?")
+            .setNegativeButton("Annulla") { dialog, which -> dialog.cancel()}
+            .setPositiveButton("Conferma") {dialog, which -> cancella()}
+        alert.show()
+    }
+
+    private fun cancella(){
+        val model = txt_model.text
+        val owner = txt_owner.text
+        val docucar = docutente.collection("Vettura").document("$model"+"_$owner")
+        docucar.delete()
+            .addOnCompleteListener { Navigation.findNavController(this!!.view!!).navigate(R.id.action_description_car_to_garage) }
+
     }
 
 

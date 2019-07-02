@@ -66,5 +66,7 @@
         <action android:id="@+id/action_addcar_to_garage" app:destination="@id/garage"/>
     </fragment>
     <fragment android:id="@+id/description_car" android:name="com.example.mycarsmanager.description_car"
-              android:label="fragment_description_car" tools:layout="@layout/fragment_description_car"/>
+              android:label="fragment_description_car" tools:layout="@layout/fragment_description_car">
+        <action android:id="@+id/action_description_car_to_garage" app:destination="@id/garage"/>
+    </fragment>
 </navigation>

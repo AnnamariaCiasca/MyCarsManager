@@ -96,53 +96,57 @@
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="textPersonName|textCapCharacters"
                     android:ems="10"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:id="@+id/etxt_targa" android:layout_weight="1" android:textAlignment="center"
-                    android:hint="Targa"/>
+                    android:hint="Targa" android:maxLength="7" android:textAllCaps="false"
+                    android:capitalize="characters"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:layout_margin="8dp" android:id="@+id/rca_layout"
                 android:gravity="center">
-            <EditText
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:ems="10"
-                    android:id="@+id/etxt_rca" android:layout_weight="1" android:textAlignment="center"
-                    android:hint="Scadenza RCA"/>
+                    android:id="@+id/txt_rca_add" android:layout_weight="1" android:textAlignment="center"
+                    android:hint="Scadenza RCA" android:enabled="true" android:paddingTop="12dp"
+                    android:paddingBottom="12dp"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:layout_margin="8dp" android:id="@+id/bollo_layout"
                 android:gravity="center">
-            <EditText
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:ems="10"
-                    android:layout_weight="1" android:textAlignment="center" android:id="@+id/etxt_bollo"
-                    android:hint="Scadenza Bollo"/>
+                    android:layout_weight="1" android:textAlignment="center" android:id="@+id/txt_bollo_add"
+                    android:hint="Scadenza Bollo" android:enabled="true" android:paddingTop="12dp"
+                    android:paddingBottom="12dp"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:layout_margin="8dp" android:id="@+id/rev_layout"
                 android:gravity="center">
-            <EditText
+            <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/colorPrimaryDark"
                     android:inputType="date"
                     android:ems="10"
-                    android:id="@+id/etxt_rev" android:layout_weight="1" android:textAlignment="center"
-                    android:hint="Ultima Revisione"/>
+                    android:id="@+id/txt_rev_add" android:layout_weight="1" android:textAlignment="center"
+                    android:hint="Ultima Revisione" android:enabled="true" android:paddingTop="12dp"
+                    android:paddingBottom="12dp"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"

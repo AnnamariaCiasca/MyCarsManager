@@ -1,6 +1,7 @@
 package com.example.mycarsmanager
 
 
+import android.app.DatePickerDialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
@@ -15,8 +16,8 @@ import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.fragment_account.*
 import kotlinx.android.synthetic.main.fragment_addcar.*
+import java.util.*
 
 
 class addcar : Fragment() {
@@ -29,6 +30,11 @@ class addcar : Fragment() {
     private val docutente = mStore.collection("Utenti").document("$id")
     private val docucar = docutente.collection("Vettura")
     private var imgURI: Uri? =null
+    private val c = Calendar.getInstance()
+    private val year = c.get(Calendar.YEAR)
+    private val month = c.get(Calendar.MONTH)
+    private val day = c.get(Calendar.DAY_OF_MONTH)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,9 +53,9 @@ class addcar : Fragment() {
                 val modello = etxt_model.text.toString()
                 val owner = etxt_owner.text.toString()
                 val targa = etxt_targa.text.toString()
-                val scadRCA = etxt_rca.text.toString()
-                val scadBollo = etxt_bollo.text.toString()
-                val lastRev = etxt_rev.text.toString()
+                val scadRCA = txt_rca_add.text.toString()
+                val scadBollo = txt_bollo_add.text.toString()
+                val lastRev = txt_rev_add.text.toString()
 
                 val filename = modello + "_" + owner
 
@@ -75,6 +81,26 @@ class addcar : Fragment() {
 
         btn_cancel.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addcar_to_garage) }
 
+        txt_rca_add.setOnClickListener {
+            val dpd = DatePickerDialog(activity,R.style.DataTheme,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                txt_rca_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
+
+            dpd.show()
+        }
+
+        txt_bollo_add.setOnClickListener {
+            val dpd = DatePickerDialog(activity,R.style.DataTheme,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                txt_bollo_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
+
+            dpd.show()
+        }
+
+        txt_rev_add.setOnClickListener {
+            val dpd = DatePickerDialog(activity,R.style.DataTheme, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+                txt_rev_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
+
+            dpd.show()
+        }
 
         img_car.setOnClickListener {
 
@@ -117,7 +143,7 @@ class addcar : Fragment() {
         val modello = etxt_model.text.toString()
         val owner = etxt_owner.text.toString()
 
-        val filename = modello+"_"+owner
+        val filename = "$modello"+"_$owner"
 
         val ref = mStorage.getReference("/img_car/$filename")
 
