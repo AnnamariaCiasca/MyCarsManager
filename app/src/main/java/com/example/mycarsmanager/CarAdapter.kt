@@ -21,7 +21,7 @@ class CarAdapter(val carList: ArrayList<Car>): RecyclerView.Adapter<CarAdapter.V
         p0.txtmodel?.text = carList[p1].Model
         p0.txtowner?.text = carList[p1].Owner
         val url = carList[p1].url
-        Picasso.with(null).load(url).into(p0.img_car)
+        Picasso.with(p0.img_car.context).load(url).into(p0.img_car)
 
         val model = p0.txtmodel?.text
         val own = p0.txtowner?.text

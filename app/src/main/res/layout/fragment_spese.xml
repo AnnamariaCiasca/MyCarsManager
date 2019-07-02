@@ -8,11 +8,11 @@
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline33"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.02676399"/>
+                                          app:layout_constraintGuide_end="11dp"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline34"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.14841849"/>
+                                          app:layout_constraintGuide_percent="0.15085158"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline35"
                                           android:orientation="horizontal"
@@ -21,6 +21,14 @@
                                           android:id="@+id/guideline36"
                                           android:orientation="horizontal"
                                           app:layout_constraintGuide_percent="0.08344733"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/totale"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/file"/>
     <View
             android:id="@+id/testata4"
             android:layout_width="0dp"
@@ -47,8 +55,74 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/menu"
-            app:layout_constraintTop_toTopOf="@id/guideline35"
-            app:layout_constraintBottom_toTopOf="@+id/guideline36" app:layout_constraintEnd_toStartOf="@id/guideline34"
-            app:layout_constraintStart_toStartOf="@id/guideline33"
+            app:layout_constraintBottom_toTopOf="@+id/guideline36" app:layout_constraintEnd_toStartOf="@+id/guideline34"
+            app:layout_constraintTop_toTopOf="@+id/guideline35" app:layout_constraintStart_toStartOf="@+id/guideline71"
     />
+    <ImageView
+            android:src="@drawable/add_circle_green_512"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/add_spese"
+            app:layout_constraintTop_toTopOf="@+id/guideline35" app:layout_constraintEnd_toStartOf="@+id/guideline33"
+            app:layout_constraintBottom_toTopOf="@+id/guideline36"
+            app:layout_constraintStart_toStartOf="@+id/guideline72"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline71"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.02676399"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline72"
+                                          android:orientation="vertical"
+                                          app:layout_constraintGuide_percent="0.8515815"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/testata4"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center" android:layout_marginTop="16dp" android:id="@+id/linearLayout2">
+        <TextView
+                android:text="Veicolo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/txtVeicolo" android:layout_weight="1"
+                android:textAlignment="center" android:textColor="@android:color/black" android:textSize="18sp"
+                android:textStyle="bold" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"/>
+        <Spinner
+                android:layout_width="80dp"
+                android:layout_height="wrap_content" android:id="@+id/spin_car" android:layout_weight="1"
+                android:layout_marginLeft="8dp" android:layout_marginRight="8dp"/>
+        <Button
+                android:text="Mostra Spese"
+                android:layout_width="87dp"
+                android:layout_height="wrap_content" android:id="@+id/btn_show_spese" android:layout_weight="1"
+                android:background="@drawable/rounded_btnreg" android:textColor="@android:color/white"
+                android:textStyle="bold" android:layout_marginLeft="8dp" android:layout_marginRight="8dp"
+                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
+                android:shadowColor="@android:color/black"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:id="@+id/spese_list"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/guideline33"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="@+id/guideline71"
+            android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/spese_list">
+        <Button
+                android:text="Mostra Totale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btn_totale" android:layout_weight="1"
+                android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
+                android:textColor="@android:color/white" android:textStyle="bold"/>
+        <Button
+                android:text="Mostra Grafico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_weight="1"
+                android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
+                android:textColor="@android:color/white" android:textStyle="bold" android:id="@+id/btn_grafico"/>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -2,7 +2,10 @@ package com.example.mycarsmanager
 
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
+import android.provider.CalendarContract
+import android.provider.CalendarContract.Events.*
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -58,13 +61,21 @@ class description_car : Fragment() {
                 etxt_model.setText(mod)
                 etxt_owner.setText(own)
                 etxt_targa.setText(targa)
-                txt_bollo.setText(bol)
-                txt_rca.setText(rca)
+                etxt_bollo.setText(bol)
+                etxt_rca.setText(rca)
                 etxt_rev.setText(rev)
             }
 
         btn_delete.setOnClickListener {
             dialog()
+        }
+
+        img_calend_boll.setOnClickListener {
+            val intent = Intent(Intent.ACTION_INSERT)
+                .setData(CONTENT_URI)
+                .putExtra(TITLE, "Scadenza Bollo")
+                .putExtra(EVENT_LOCATION, "")
+            startActivity(intent)
         }
 
     }

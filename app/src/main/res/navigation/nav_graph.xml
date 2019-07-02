@@ -24,6 +24,7 @@
     <fragment android:id="@+id/spese" android:name="com.example.mycarsmanager.spese" android:label="fragment_spese"
               tools:layout="@layout/fragment_spese">
         <action android:id="@+id/action_spese_to_dashboard3" app:destination="@id/dashboard3"/>
+        <action android:id="@+id/action_spese_to_addspesa" app:destination="@id/addspesa"/>
     </fragment>
     <fragment android:id="@+id/cerca" android:name="com.example.mycarsmanager.Cerca" android:label="fragment_cerca"
               tools:layout="@layout/fragment_cerca">
@@ -68,5 +69,9 @@
     <fragment android:id="@+id/description_car" android:name="com.example.mycarsmanager.description_car"
               android:label="fragment_description_car" tools:layout="@layout/fragment_description_car">
         <action android:id="@+id/action_description_car_to_garage" app:destination="@id/garage"/>
+    </fragment>
+    <fragment android:id="@+id/addspesa" android:name="com.example.mycarsmanager.addspesa"
+              android:label="fragment_addspesa" tools:layout="@layout/fragment_addspesa">
+        <action android:id="@+id/action_addspesa_to_spese" app:destination="@id/spese"/>
     </fragment>
 </navigation>

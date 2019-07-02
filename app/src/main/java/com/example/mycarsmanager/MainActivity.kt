@@ -15,4 +15,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signOut()
     }
 
+    override fun onBackPressed() {
+    }
+
 }

@@ -111,11 +111,15 @@
                     android:layout_height="wrap_content" android:id="@+id/txt_bollo" android:layout_weight="1"
                     android:textColor="@android:color/black" android:textAlignment="center" android:textSize="18sp"/>
             <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="163dp"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:ems="10"
                     android:id="@+id/etxt_bollo" android:layout_weight="0" android:textAlignment="center"/>
+            <ImageView
+                    android:src="@android:drawable/ic_menu_today"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent" android:id="@+id/img_calend_boll" android:layout_weight="0"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -127,11 +131,15 @@
                     android:layout_height="wrap_content" android:id="@+id/txt_rca" android:layout_weight="1"
                     android:textColor="@android:color/black" android:textAlignment="center" android:textSize="18sp"/>
             <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="163dp"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:ems="10"
                     android:id="@+id/etxt_rca" android:layout_weight="0" android:textAlignment="center"/>
+            <ImageView
+                    android:src="@android:drawable/ic_menu_today"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent" android:id="@+id/img_calend_rca" android:layout_weight="0"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -143,11 +151,15 @@
                     android:layout_height="wrap_content" android:id="@+id/txt_rev" android:layout_weight="1"
                     android:textColor="@android:color/black" android:textAlignment="center" android:textSize="18sp"/>
             <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="163dp"
                     android:layout_height="wrap_content"
                     android:inputType="date"
                     android:ems="10"
                     android:id="@+id/etxt_rev" android:layout_weight="0" android:textAlignment="center"/>
+            <ImageView
+                    android:src="@android:drawable/ic_menu_today"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent" android:id="@+id/img_calend_rev" android:layout_weight="0"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"

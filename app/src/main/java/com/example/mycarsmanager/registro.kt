@@ -55,6 +55,7 @@ class registro : Fragment() {
                 if (!it.isSuccessful){
                     return@addOnCompleteListener
                 }
+                it.result?.user?.sendEmailVerification()
                 Navigation.findNavController(view).navigate(R.id.action_registro_to_login)
             }
             .addOnFailureListener {

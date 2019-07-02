@@ -38,7 +38,7 @@ class login : Fragment() {
         }
 
         btn_login.setOnClickListener {
-            showDialog()
+
             entra(view)
         }
 
@@ -54,15 +54,20 @@ class login : Fragment() {
             return
         }
 
+        showDialog()
+
         Log.d("Main", "E-mail: $email")
         Log.d("Main", "Password: $psw")
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, psw)
             .addOnCompleteListener {
-                if (!it.isSuccessful) {
-                    return@addOnCompleteListener
+                val acc = it.result?.user?.isEmailVerified
+                if (acc == false){
+                    Toast.makeText(activity, "Error: Verify mail", Toast.LENGTH_SHORT).show()
+                    FirebaseAuth.getInstance().signOut()
+                }else{
+                    Navigation.findNavController(view).navigate(R.id.action_login_to_account)
                 }
-                Navigation.findNavController(view).navigate(R.id.action_login_to_account)
             }
             .addOnFailureListener {
                 Toast.makeText(activity, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
