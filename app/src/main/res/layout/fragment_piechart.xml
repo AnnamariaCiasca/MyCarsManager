@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".piechart" android:orientation="vertical"
+                                             android:background="#80FF80">
+    <View
+            android:id="@+id/testata14"
+            android:layout_width="0dp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_height="70dp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+    />
+    <TextView
+            android:text="Grafico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAlignment="center" android:textColor="@color/colorAccent"
+            android:id="@+id/titolo14" android:fontFamily="@font/carter_one"
+            android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
+            android:shadowColor="@android:color/black"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toEndOf="@+id/testata14" app:layout_constraintStart_toStartOf="@+id/testata14"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/testata14"
+            app:layout_constraintBottom_toBottomOf="@+id/testata14"/>
+    <com.github.mikephil.charting.charts.PieChart android:layout_width="0dp"
+                                                  android:layout_height="0dp"
+                                                  android:id="@+id/pichart_spese"
+                                                  app:layout_constraintEnd_toEndOf="parent"
+                                                  app:layout_constraintStart_toStartOf="parent"
+                                                  android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+                                                  app:layout_constraintBottom_toTopOf="@+id/btn_indietro"
+                                                  app:layout_constraintTop_toBottomOf="@+id/titolo14"
+                                                  android:layout_marginEnd="8dp"
+                                                  android:layout_marginTop="8dp"></com.github.mikephil.charting.charts.PieChart>
+    <Button
+            android:text="Indietro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/btn_indietro"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="@id/pichart_spese"
+            app:layout_constraintStart_toStartOf="@id/pichart_spese" android:background="@drawable/rounded_btnreg"
+            android:textStyle="bold" android:textColor="@android:color/white"
+            android:shadowColor="@android:color/black" android:shadowDy="4" android:shadowRadius="4"
+            android:shadowDx="0" android:textSize="24sp"/>
+
+</android.support.constraint.ConstraintLayout>

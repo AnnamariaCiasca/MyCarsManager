@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" android:background="#80FF80">
+
+    <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="#80FF80">
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center" android:background="#80FF80"
+                android:id="@+id/item_body">
+            <ImageView android:layout_width="75dp"
+                       android:layout_height="75dp"
+                       android:id="@+id/img_spese"
+                       android:layout_margin="8dp"
+                       android:background="@android:drawable/btn_star_big_on"/>
+            <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="186dp"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:id="@+id/txtTitle"
+                        android:text="Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                <TextView
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                        android:text="Occupation"
+                        android:id="@+id/txtDescr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <TextView
+                    android:text="3,40€"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/txtEuro" android:layout_weight="1"
+                    android:textStyle="bold" android:textAlignment="center" android:textSize="24sp"
+                    android:textColor="@android:color/black"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
