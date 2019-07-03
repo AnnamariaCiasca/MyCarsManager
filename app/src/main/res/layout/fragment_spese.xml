@@ -24,11 +24,18 @@
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/totale"/>
+            android:layout_height="wrap_content" android:id="@+id/totale"
+            app:layout_constraintBottom_toBottomOf="@+id/menu" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/menu"
+            app:layout_constraintStart_toStartOf="@+id/guideline71" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/menu"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/file"/>
+            android:layout_height="wrap_content" android:id="@+id/file"
+            app:layout_constraintBottom_toBottomOf="@+id/menu" app:layout_constraintStart_toStartOf="@+id/guideline71"
+            app:layout_constraintEnd_toStartOf="@+id/guideline34" android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="@+id/menu"/>
     <View
             android:id="@+id/testata4"
             android:layout_width="0dp"
@@ -117,12 +124,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/btn_totale" android:layout_weight="1"
                 android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
-                android:textColor="@android:color/white" android:textStyle="bold"/>
+                android:textColor="@android:color/white" android:textStyle="bold"
+                android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="4"
+                android:shadowRadius="4"/>
         <Button
                 android:text="Mostra Grafico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:layout_weight="1"
                 android:background="@drawable/rounded_btnreg" android:layout_margin="8dp"
-                android:textColor="@android:color/white" android:textStyle="bold" android:id="@+id/btn_grafico"/>
+                android:textColor="@android:color/white" android:textStyle="bold" android:id="@+id/btn_grafico"
+                android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="4"
+                android:shadowRadius="4"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

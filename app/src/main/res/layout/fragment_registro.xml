@@ -67,7 +67,8 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/etxt_mail" android:textSize="24sp"
-            android:background="@drawable/rounded_fieldtxt" android:textAlignment="center" android:hint="Password"/>
+            android:background="@drawable/rounded_fieldtxt" android:textAlignment="center" android:hint="Password"
+            android:padding="8dp"/>
     <Button
             android:text="Registrati"
             android:layout_width="0dp"
@@ -96,6 +97,7 @@
             android:layout_marginEnd="32dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="32dp" android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/txt_login" android:background="@drawable/rounded_fieldtxt"
-            android:textSize="24sp" android:textAlignment="center" android:hint="user@company.com"/>
+            android:textSize="24sp" android:textAlignment="center" android:hint="user@company.com"
+            android:padding="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

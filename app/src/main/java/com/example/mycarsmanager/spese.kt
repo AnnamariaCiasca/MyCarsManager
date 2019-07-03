@@ -22,7 +22,6 @@ class spese : Fragment() {
 
     private val mAuth = FirebaseAuth.getInstance()
     private val mStore = FirebaseFirestore.getInstance()
-    private val mStorage = FirebaseStorage.getInstance()
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
     private val docutente = mStore.collection("Utenti").document("$id")
@@ -62,6 +61,15 @@ class spese : Fragment() {
 
         btn_totale.setOnClickListener {
             showTotal()
+        }
+
+        btn_grafico.setOnClickListener {
+            val auto = file.text.toString()
+
+            val info = Bundle()
+            info.putString("File", "$auto")
+
+            Navigation.findNavController(view).navigate(R.id.action_spese_to_piechart,info)
         }
 
 
@@ -131,7 +139,7 @@ class spese : Fragment() {
                 }
 
                 val totale = totale.text.toString()
-                Toast.makeText(activity,"La somma è: $totale", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,"La somma è: $totale€", Toast.LENGTH_LONG).show()
 
             }
 

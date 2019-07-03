@@ -81,7 +81,7 @@ class login : Fragment() {
         progressDialog.setCancelable(false)
         progressDialog.show()
 
-        Handler().postDelayed({progressDialog.dismiss()}, 1000)
+        Handler().postDelayed({progressDialog.dismiss()}, 2000)
     }
 
 }
