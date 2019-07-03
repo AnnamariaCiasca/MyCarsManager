@@ -100,10 +100,7 @@ class piechart : Fragment() {
 
                 pichart_spese.data = data
 
-                pichart_spese.centerTextRadiusPercent = 0f
-                pichart_spese.isDrawHoleEnabled = false
-                pichart_spese.legend.isEnabled = false
-                pichart_spese.description.isEnabled = false
+                
 
                 pichart_spese.notifyDataSetChanged()
                 pichart_spese.invalidate()
