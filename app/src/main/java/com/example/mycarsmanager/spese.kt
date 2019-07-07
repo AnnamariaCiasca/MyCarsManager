@@ -1,11 +1,15 @@
 package com.example.mycarsmanager
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat.getSystemService
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
@@ -37,6 +41,9 @@ class spese : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        hide()
+
         menu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_spese_to_dashboard3) }
         add_spese.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_spese_to_addspesa) }
 
@@ -101,7 +108,7 @@ class spese : Fragment() {
 
         val filename_spese = file.text.toString()
 
-        val docuspese = docucar.document("$filename_spese").collection("Spese")
+        val docuspese = docucar.document(filename_spese).collection("Spese")
 
         docuspese.get()
             .addOnSuccessListener {
@@ -140,10 +147,19 @@ class spese : Fragment() {
                 }
 
                 val totale = totale.text.toString()
-                Toast.makeText(activity,"Il totale speso su quest'auto è: $totale€", Toast.LENGTH_LONG).show()
-
+                if (totale == "TextView") {
+                    Toast.makeText(activity, "Il totale speso su quest'auto è: 0€", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(activity, "Il totale speso su quest'auto è: $totale€", Toast.LENGTH_LONG).show()
+                }
             }
 
+    }
+
+    private fun hide(){
+        val imm: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view?.windowToken, 0)
+        imm.hideSoftInputFromInputMethod(view?.windowToken, 0)
     }
 
 }

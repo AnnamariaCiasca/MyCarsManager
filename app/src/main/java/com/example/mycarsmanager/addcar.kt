@@ -50,6 +50,8 @@ class addcar : Fragment() {
         btn_add.setOnClickListener {
 
             if(txt_img.alpha == 0f) {
+
+
                 val modello = etxt_model.text.toString()
                 val owner = etxt_owner.text.toString()
                 val targa = etxt_targa.text.toString()
@@ -70,9 +72,12 @@ class addcar : Fragment() {
 
                 val doc_name = docucar.document("$filename")
 
-                doc_name.update(Vettura as Map<String, Any>)
+                doc_name.set(Vettura as Map<String, Any>)
 
-                Navigation.findNavController(view).navigate(R.id.action_addcar_to_garage)
+                caricafoto()
+
+                Navigation.findNavController(this!!.view!!).navigate(R.id.action_addcar_to_garage)
+
             }else{
                 Toast.makeText(activity, "Inserisci fotografia", Toast.LENGTH_SHORT).show()
             }
@@ -103,15 +108,7 @@ class addcar : Fragment() {
         }
 
         img_car.setOnClickListener {
-
-            val modello = etxt_model.text.toString()
-            val owner = etxt_owner.text.toString()
-
-            if ( modello.isEmpty() || owner.isEmpty() ) {
-                Toast.makeText(activity, "Inserisci prima Modello e Proprietario", Toast.LENGTH_SHORT).show()
-            }else{
                 selectphoto()
-            }
         }
     }
 
@@ -129,7 +126,7 @@ class addcar : Fragment() {
                 val bitmap = MediaStore.Images.Media.getBitmap(activity?.contentResolver, imgURI)
                 img_car.setImageBitmap(bitmap)
                 txt_img.alpha=0f
-                caricafoto()
+
             }
         }
     }
@@ -153,6 +150,7 @@ class addcar : Fragment() {
             }
             .addOnCompleteListener {
                 progressDialog.dismiss()
+
             }
             .addOnSuccessListener {
                 val result = it.metadata!!.reference!!.downloadUrl
@@ -165,7 +163,7 @@ class addcar : Fragment() {
 
                     val doc_name = docucar.document("$filename")
 
-                    doc_name.set(urlimg as Map<String, Any>)
+                    doc_name.update(urlimg as Map<String, Any>)
 
                 }
             }
