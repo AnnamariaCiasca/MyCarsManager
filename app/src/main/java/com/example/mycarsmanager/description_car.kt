@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.provider.CalendarContract.Events.*
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.delete_form.view.*
 import kotlinx.android.synthetic.main.fragment_description_car.*
 
 
@@ -26,6 +28,7 @@ class description_car : Fragment() {
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
     private val docutente = mStore.collection("Utenti").document("$id")
+
 
 
     override fun onCreateView(
@@ -40,9 +43,11 @@ class description_car : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         val model = arguments?.getString("Model")
         val owner = arguments?.getString("Owner")
-        val docucar = docutente.collection("Vettura").document("$model"+"_$owner")
+        val filename = "$model"+"_$owner"
+        val docucar = docutente.collection("Vettura").document(filename)
 
         txt_macchina.text=model
 
@@ -67,7 +72,30 @@ class description_car : Fragment() {
             }
 
         btn_delete.setOnClickListener {
-            dialog()
+            val mDialogView = LayoutInflater.from(it.context).inflate(R.layout.delete_form, null)
+
+            val mBuilder = AlertDialog.Builder(it.context)
+                .setView(mDialogView)
+                .setTitle("Conferma Eliminazione")
+
+            val mAlertDialog = mBuilder.show()
+
+            mDialogView.txt_delete.text = "Sei sicuro di voler eliminare $model ?"
+
+            mDialogView.btn_cancel_delete.setOnClickListener {
+                mAlertDialog.dismiss()
+            }
+
+            mDialogView.btn_accept_delete.setOnClickListener {
+                mAlertDialog.dismiss()
+                cancella(filename, view)
+            }
+
+
+        }
+
+        btn_back.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.action_description_car_to_garage)
         }
 
         img_calend_boll.setOnClickListener {
@@ -80,23 +108,12 @@ class description_car : Fragment() {
 
     }
 
-
-    private fun dialog(){
-        val alert = AlertDialog.Builder(activity)
-        val mod = txt_macchina.text
-        alert.setTitle("Sei Sicuro?")
-            .setMessage("Sicuro di voler Cancellare $mod ?")
-            .setNegativeButton("Annulla") { dialog, which -> dialog.cancel()}
-            .setPositiveButton("Conferma") {dialog, which -> cancella()}
-        alert.show()
-    }
-
-    private fun cancella(){
-        val model = txt_model.text
-        val owner = txt_owner.text
-        val docucar = docutente.collection("Vettura").document("$model"+"_$owner")
+    private fun cancella(file: String, view: View){
+        val docucar = docutente.collection("Vettura").document(file)
         docucar.delete()
-            .addOnCompleteListener { Navigation.findNavController(this!!.view!!).navigate(R.id.action_description_car_to_garage) }
+            .addOnSuccessListener {
+                Navigation.findNavController(view).navigate(R.id.action_description_car_to_garage)
+            }
 
     }
 

@@ -73,7 +73,8 @@ class account : Fragment() {
                         "img_url" to ""
                     )
                     docutente.set(user as Map<String, Any>)
-                    etxt_mail.setText(mail)
+
+
                 }
             }
 
@@ -156,5 +157,5 @@ class account : Fragment() {
     private fun downloadphoto(url:String){
         Picasso.with(activity).load(url).into(profile_round)
     }
-
+    
 }

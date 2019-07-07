@@ -101,7 +101,8 @@
                 android:id="@+id/etxt_name" android:background="@drawable/rounded_fieldtxt"
                 android:layout_marginTop="8dp" android:textSize="24sp" android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" android:textAlignment="center" android:shadowColor="#00000000"
-                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:hint="es. Paolo Rossi"/>
+                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:hint="es. Paolo Rossi"
+                android:padding="4dp"/>
         <TextView
                 android:text="E-mail"
                 android:layout_width="wrap_content"
@@ -115,7 +116,8 @@
                 android:id="@+id/etxt_mail" android:background="@drawable/rounded_fieldtxt"
                 android:layout_marginTop="8dp" android:textSize="24sp" android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" android:textAlignment="center" android:shadowColor="#00000000"
-                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:enabled="false"/>
+                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:enabled="false"
+                android:padding="4dp"/>
         <TextView
                 android:text="Password"
                 android:layout_width="wrap_content"
@@ -130,7 +132,7 @@
                 android:layout_marginTop="8dp" android:textSize="24sp" android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" android:textAlignment="center" android:shadowColor="#00000000"
                 android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:enabled="false"
-                android:text="@string/gcm_defaultSenderId"/>
+                android:text="@string/gcm_defaultSenderId" android:padding="4dp"/>
         <TextView
                 android:text="Numero di Telefono"
                 android:layout_width="wrap_content"
@@ -144,12 +146,13 @@
                 android:id="@+id/etxt_phone" android:background="@drawable/rounded_fieldtxt"
                 android:layout_marginTop="8dp" android:textSize="24sp" android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp" android:textAlignment="center" android:shadowColor="#00000000"
-                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:hint="es. 123 4567891"/>
+                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:hint="es. 123 4567891"
+                android:padding="4dp"/>
         <Button
                 android:text="Modifica Informazioni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/btn_change"
-                android:background="@drawable/rounded_btnreg" android:layout_marginTop="16dp" android:textSize="22sp"
+                android:background="@drawable/rounded_btnreg" android:layout_marginTop="8dp" android:textSize="22sp"
                 android:gravity="center" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
                 android:shadowColor="#00000000" android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
                 android:textColor="@android:color/white"/>
@@ -159,13 +162,13 @@
                 android:layout_height="wrap_content" android:id="@+id/btn_changepsw"
                 android:background="@drawable/rounded_btnreg" android:shadowColor="#00000000" android:shadowDx="0"
                 android:shadowDy="4" android:shadowRadius="4" android:textColor="@android:color/white"
-                android:layout_marginTop="16dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
                 android:textSize="22sp" android:gravity="center"/>
         <Button
                 android:text="Esci"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/btn_out"
-                android:background="@drawable/rounded_btnreg" android:layout_marginTop="16dp" android:textSize="22sp"
+                android:background="@drawable/rounded_btnreg" android:layout_marginTop="8dp" android:textSize="22sp"
                 android:gravity="center" android:layout_marginLeft="16dp" android:layout_marginRight="16dp"
                 android:shadowColor="#00000000" android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
                 android:textColor="@android:color/white"/>

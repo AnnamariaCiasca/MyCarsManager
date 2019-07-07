@@ -65,7 +65,8 @@
                     android:inputType="textPersonName"
                     android:text="Name"
                     android:ems="10"
-                    android:id="@+id/etxt_model" android:layout_weight="0" android:textAlignment="center"/>
+                    android:id="@+id/etxt_model" android:layout_weight="0" android:textAlignment="center"
+                    android:enabled="false"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -82,7 +83,8 @@
                     android:inputType="textPersonName"
                     android:text="Name"
                     android:ems="10"
-                    android:id="@+id/etxt_owner" android:layout_weight="0" android:textAlignment="center"/>
+                    android:id="@+id/etxt_owner" android:layout_weight="0" android:textAlignment="center"
+                    android:enabled="false"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -99,7 +101,8 @@
                     android:inputType="textPersonName"
                     android:text="Name"
                     android:ems="10"
-                    android:id="@+id/etxt_targa" android:layout_weight="0" android:textAlignment="center"/>
+                    android:id="@+id/etxt_targa" android:layout_weight="0" android:textAlignment="center"
+                    android:enabled="false"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -164,7 +167,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:id="@+id/btn">
+                android:layout_height="wrap_content" android:id="@+id/btn">
             <Button
                     android:text="Elimina"
                     android:layout_width="wrap_content"
@@ -182,5 +185,13 @@
                     android:shadowColor="@android:color/black" android:shadowDx="0" android:shadowDy="4"
                     android:shadowRadius="4"/>
         </LinearLayout>
+        <Button
+                android:text="Indietro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btn_back"
+                android:background="@drawable/rounded_btnreg" android:textSize="18sp"
+                android:textColor="@android:color/white" android:shadowColor="@android:color/black"
+                android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4" android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

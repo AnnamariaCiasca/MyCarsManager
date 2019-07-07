@@ -112,12 +112,13 @@ class spese : Fragment() {
                     val desc= document.getString("Descrizione").toString()
                     val prezzo = document.getString("Prezzo").toString()
 
-                    val spesa = expenses(title,desc,prezzo)
+                    val spesa = expenses(title,desc,prezzo, filename_spese)
 
                     spese.add(spesa)
                 }
 
                 spese_list.adapter= ExpensesAdapter(spese)
+
             }
     }
 
@@ -139,7 +140,7 @@ class spese : Fragment() {
                 }
 
                 val totale = totale.text.toString()
-                Toast.makeText(activity,"La somma è: $totale€", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,"Il totale speso su quest'auto è: $totale€", Toast.LENGTH_LONG).show()
 
             }
 

@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_account.*
 import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_login.etxt_mail
 
@@ -60,9 +61,9 @@ class login : Fragment() {
         Log.d("Main", "Password: $psw")
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, psw)
-            .addOnCompleteListener {
-                val acc = it.result?.user?.isEmailVerified
-                if (acc == false){
+            .addOnSuccessListener {
+                val acc = it.user?.isEmailVerified
+                if (acc == false) {
                     Toast.makeText(activity, "Error: Verify mail", Toast.LENGTH_SHORT).show()
                     FirebaseAuth.getInstance().signOut()
                 }else{
