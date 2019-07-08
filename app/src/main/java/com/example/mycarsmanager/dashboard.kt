@@ -11,14 +11,6 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- */
 class dashboard : Fragment() {
 
     override fun onCreateView(
@@ -33,11 +25,11 @@ class dashboard : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        btn_cerca.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_cerca)}
-        btn_park.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_park)}
-        btn_service.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_service)}
-        btn_security.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_security)}
-        btn_option.setOnClickListener {Navigation.findNavController(view).navigate(R.id.action_dashboard3_to_option)}
+        btn_cerca.setOnClickListener {Toast.makeText(activity, "Questa funzionalità verrà implementata in futuro", Toast.LENGTH_SHORT).show()}
+        btn_park.setOnClickListener {Toast.makeText(activity, "Questa funzionalità verrà implementata in futuro", Toast.LENGTH_SHORT).show()}
+        btn_service.setOnClickListener {Toast.makeText(activity, "Questa funzionalità verrà implementata in futuro", Toast.LENGTH_SHORT).show()}
+        btn_security.setOnClickListener {Toast.makeText(activity, "Questa funzionalità verrà implementata in futuro", Toast.LENGTH_SHORT).show()}
+        btn_option.setOnClickListener {Toast.makeText(activity, "Questa funzionalità verrà implementata in futuro", Toast.LENGTH_SHORT).show()}
 
 
         if(FirebaseAuth.getInstance().currentUser == null){

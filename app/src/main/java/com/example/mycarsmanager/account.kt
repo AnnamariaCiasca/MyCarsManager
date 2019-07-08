@@ -92,6 +92,10 @@ class account : Fragment() {
         img_profile.setOnClickListener {
             selectphoto()
         }
+
+        btn_changepsw.setOnClickListener {
+            mAuth.sendPasswordResetEmail(etxt_mail.text.toString())
+        }
     }
 
     private fun updateinfo(){

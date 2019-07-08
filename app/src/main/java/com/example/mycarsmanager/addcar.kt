@@ -76,7 +76,7 @@ class addcar : Fragment() {
 
                 caricafoto()
 
-                Navigation.findNavController(this!!.view!!).navigate(R.id.action_addcar_to_garage)
+                Navigation.findNavController(view).navigate(R.id.action_addcar_to_garage)
 
             }else{
                 Toast.makeText(activity, "Inserisci fotografia", Toast.LENGTH_SHORT).show()
@@ -87,21 +87,21 @@ class addcar : Fragment() {
         btn_cancel.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_addcar_to_garage) }
 
         txt_rca_add.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 txt_rca_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()
         }
 
         txt_bollo_add.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!,DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 txt_bollo_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()
         }
 
         txt_rev_add.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 txt_rev_add.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()

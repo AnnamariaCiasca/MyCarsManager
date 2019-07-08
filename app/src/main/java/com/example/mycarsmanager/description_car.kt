@@ -121,7 +121,7 @@ class description_car : Fragment() {
         }
 
         etxt_bollo.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme,
+            val dpd = DatePickerDialog(context,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                     etxt_bollo.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
@@ -129,7 +129,7 @@ class description_car : Fragment() {
         }
 
         etxt_rca.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme,
+            val dpd = DatePickerDialog(context,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                     etxt_rca.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
@@ -137,7 +137,7 @@ class description_car : Fragment() {
         }
 
         etxt_rev.setOnClickListener {
-            val dpd = DatePickerDialog(activity,R.style.AppTheme,
+            val dpd = DatePickerDialog(context,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                     etxt_rev.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
@@ -183,6 +183,11 @@ class description_car : Fragment() {
 
     private fun cancella(file: String, view: View){
         val docucar = docutente.collection("Vettura").document(file)
+        val imgcar = mStorage.getReference("/img_car/$file")
+        imgcar.delete()
+            .addOnSuccessListener {
+                Log.d("Desc", "Immagine eliminata!")
+            }
         docucar.delete()
             .addOnSuccessListener {
                 Navigation.findNavController(view).navigate(R.id.action_description_car_to_garage)
