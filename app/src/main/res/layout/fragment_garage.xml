@@ -12,7 +12,7 @@
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline65"
                                           android:orientation="vertical"
-                                          app:layout_constraintGuide_percent="0.9756691"/>
+                                          app:layout_constraintGuide_percent="0.98053527"/>
     <View
             android:id="@+id/testata3"
             android:layout_width="0dp"

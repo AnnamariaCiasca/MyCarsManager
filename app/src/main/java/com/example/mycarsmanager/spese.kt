@@ -94,7 +94,7 @@ class spese : Fragment() {
                     cars.add(model+"_"+owner)
                 }
 
-                val adap = ArrayAdapter(activity, android.R.layout.simple_spinner_item,cars)
+                val adap = ArrayAdapter(context!!, android.R.layout.simple_spinner_item,cars)
 
                 adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
@@ -159,7 +159,7 @@ class spese : Fragment() {
     private fun hide(){
         val imm: InputMethodManager = context?.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view?.windowToken, 0)
-        imm.hideSoftInputFromInputMethod(view?.windowToken, 0)
+        //imm.hideSoftInputFromInputMethod(view?.windowToken, 0)
     }
 
 }

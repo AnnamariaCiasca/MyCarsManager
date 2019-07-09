@@ -104,8 +104,8 @@
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.73"/>
     <ImageView
             android:layout_width="0dp"
-            android:layout_height="0dp" app:srcCompat="@drawable/cerca"
-            android:id="@+id/btn_cerca" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt4"
+            android:layout_height="0dp" app:srcCompat="@drawable/family"
+            android:id="@+id/btn_family" app:layout_constraintEnd_toStartOf="@+id/mrg_rgt4"
             app:layout_constraintBottom_toTopOf="@+id/guideline2" app:layout_constraintStart_toStartOf="@+id/mrg_lft4"
             app:layout_constraintTop_toTopOf="@+id/guideline"
     />

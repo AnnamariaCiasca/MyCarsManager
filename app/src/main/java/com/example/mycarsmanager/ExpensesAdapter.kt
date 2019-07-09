@@ -1,20 +1,17 @@
 package com.example.mycarsmanager
 
 import android.app.AlertDialog
-import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.delete_form.view.*
-import kotlinx.android.synthetic.main.fragment_description_car.*
 
 class ExpensesAdapter(val expensesList: ArrayList<expenses>): RecyclerView.Adapter<ExpensesAdapter.ViewHolder>(){
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {

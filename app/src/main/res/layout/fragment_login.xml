@@ -69,15 +69,11 @@
             android:textSize="24sp" android:hint="user@company.com" android:textAlignment="center"
             android:padding="8dp"/>
     <EditText
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
             android:id="@+id/etxt_pass"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/etxt_mail" android:background="@drawable/rounded_fieldtxt"
-            android:textSize="24sp" android:hint="Password" android:textAlignment="center" android:padding="8dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/etxt_mail"
+            android:hint="Password" style="@style/field_blank"/>
     <Button
             android:text="Entra"
             android:layout_width="0dp"

@@ -26,11 +26,11 @@ import kotlinx.android.synthetic.main.fragment_account.*
 class account : Fragment() {
 
     private val mAuth = FirebaseAuth.getInstance()
-    private val mStore = FirebaseFirestore.getInstance()
-    private val mStorage = FirebaseStorage.getInstance()
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
+    private val mStore = FirebaseFirestore.getInstance()
     private val docutente = mStore.collection("Utenti").document("$id")
+    private val mStorage = FirebaseStorage.getInstance()
     private val filename= "img_profile_$id"
     private val ref = mStorage.getReference("/img_profile/$filename")
     private var imgURI: Uri? =null
@@ -70,10 +70,12 @@ class account : Fragment() {
                         "Email" to "$mail",
                         "Nome" to "",
                         "Telefono" to "",
-                        "img_url" to ""
+                        "img_url" to "",
+                        "Famiglia" to ""
                     )
                     docutente.set(user as Map<String, Any>)
 
+                    etxt_mail.setText(mail)
 
                 }
             }

@@ -7,11 +7,7 @@
               android:label="fragment_dashboard" tools:layout="@layout/fragment_dashboard">
         <action android:id="@+id/action_dashboard3_to_garage" app:destination="@id/garage"/>
         <action android:id="@+id/action_dashboard3_to_spese" app:destination="@id/spese"/>
-        <action android:id="@+id/action_dashboard3_to_service" app:destination="@id/service"/>
-        <action android:id="@+id/action_dashboard3_to_cerca" app:destination="@id/cerca"/>
-        <action android:id="@+id/action_dashboard3_to_security" app:destination="@id/security"/>
-        <action android:id="@+id/action_dashboard3_to_option" app:destination="@id/option"/>
-        <action android:id="@+id/action_dashboard3_to_park" app:destination="@id/park"/>
+        <action android:id="@+id/action_dashboard3_to_family" app:destination="@+id/family"/>
         <action android:id="@+id/action_dashboard3_to_registro" app:destination="@id/registro"/>
         <action android:id="@+id/action_dashboard3_to_account" app:destination="@id/account"/>
     </fragment>
@@ -27,25 +23,9 @@
         <action android:id="@+id/action_spese_to_addspesa" app:destination="@id/addspesa"/>
         <action android:id="@+id/action_spese_to_piechart" app:destination="@id/piechart"/>
     </fragment>
-    <fragment android:id="@+id/cerca" android:name="com.example.mycarsmanager.Cerca" android:label="fragment_cerca"
-              tools:layout="@layout/fragment_cerca">
-        <action android:id="@+id/action_cerca_to_dashboard3" app:destination="@id/dashboard3"/>
-    </fragment>
-    <fragment android:id="@+id/option" android:name="com.example.mycarsmanager.option" android:label="fragment_option"
-              tools:layout="@layout/fragment_option">
-        <action android:id="@+id/action_option_to_dashboard3" app:destination="@id/dashboard3"/>
-    </fragment>
-    <fragment android:id="@+id/park" android:name="com.example.mycarsmanager.park" android:label="fragment_park"
-              tools:layout="@layout/fragment_park">
-        <action android:id="@+id/action_park_to_dashboard3" app:destination="@id/dashboard3"/>
-    </fragment>
-    <fragment android:id="@+id/security" android:name="com.example.mycarsmanager.security"
-              android:label="fragment_security" tools:layout="@layout/fragment_security">
-        <action android:id="@+id/action_security_to_dashboard3" app:destination="@id/dashboard3"/>
-    </fragment>
-    <fragment android:id="@+id/service" android:name="com.example.mycarsmanager.service"
-              android:label="fragment_service" tools:layout="@layout/fragment_service">
-        <action android:id="@+id/action_service_to_dashboard3" app:destination="@id/dashboard3"/>
+    <fragment android:id="@+id/family" android:name="com.example.mycarsmanager.Family" android:label="fragment_cerca"
+              tools:layout="@layout/fragment_family">
+        <action android:id="@+id/action_family_to_dashboard3" app:destination="@id/dashboard3"/>
     </fragment>
     <fragment android:id="@+id/login" android:name="com.example.mycarsmanager.login" android:label="fragment_login"
               tools:layout="@layout/fragment_login">
@@ -65,7 +45,7 @@
     </fragment>
     <fragment android:id="@+id/addcar" android:name="com.example.mycarsmanager.addcar" android:label="addcar"
     >
-        <action android:id="@+id/action_addcar_to_garage" app:destination="@id/garage"/>
+        <action android:id="@+id/action_addcar_to_garage" app:destination="@+id/garage"/>
     </fragment>
     <fragment android:id="@+id/description_car" android:name="com.example.mycarsmanager.description_car"
               android:label="fragment_description_car" tools:layout="@layout/fragment_description_car">

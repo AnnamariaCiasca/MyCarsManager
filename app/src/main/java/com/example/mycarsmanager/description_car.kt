@@ -24,6 +24,7 @@ import kotlinx.android.synthetic.main.fragment_description_car.etxt_model
 import kotlinx.android.synthetic.main.fragment_description_car.etxt_owner
 import kotlinx.android.synthetic.main.fragment_description_car.etxt_targa
 import kotlinx.android.synthetic.main.fragment_description_car.img_car
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -41,6 +42,9 @@ class description_car : Fragment() {
     private val day = c.get(Calendar.DAY_OF_MONTH)
 
 
+    companion object{
+        val Annomilli = 31540000000
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -91,54 +95,76 @@ class description_car : Fragment() {
         }
 
         img_calend_boll.setOnClickListener {
+            val mydata = etxt_bollo.text.toString()
+            val parser = SimpleDateFormat("dd/MM/yyyy")
+            val date = parser.parse(mydata)
+            val millis = date.time + Annomilli
+
             val intent = Intent(Intent.ACTION_INSERT)
                 .setData(CONTENT_URI)
                 .putExtra(TITLE, "Scadenza Bollo")
                 .putExtra(EVENT_LOCATION, "")
                 .putExtra(ALL_DAY, true)
                 .putExtra(DESCRIPTION, "Rinnova Bollo")
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, millis)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, millis)
             startActivity(intent)
         }
 
         img_calend_rca.setOnClickListener {
+            val mydata = etxt_rca.text.toString()
+            val parser = SimpleDateFormat("dd/MM/yyyy")
+            val date = parser.parse(mydata)
+            val millis = date.time + Annomilli
+
             val intent = Intent(Intent.ACTION_INSERT)
                 .setData(CONTENT_URI)
                 .putExtra(TITLE, "Scadenza Assicurazione")
                 .putExtra(EVENT_LOCATION, "")
                 .putExtra(ALL_DAY, true)
                 .putExtra(DESCRIPTION, "Rinnova Assicurazione")
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, millis)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, millis)
             startActivity(intent)
         }
 
         img_calend_rev.setOnClickListener {
+            val mydata = etxt_rev.text.toString()
+            val parser = SimpleDateFormat("dd/MM/yyyy")
+            val date = parser.parse(mydata)
+            val millis = date.time + Annomilli
+
+
             val intent = Intent(Intent.ACTION_INSERT)
                 .setData(CONTENT_URI)
                 .putExtra(TITLE, "Scadenza Revisione")
                 .putExtra(EVENT_LOCATION, "")
                 .putExtra(ALL_DAY, true)
                 .putExtra(DESCRIPTION, "Effettua Revisione")
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, millis)
+                .putExtra(CalendarContract.EXTRA_EVENT_END_TIME, millis)
             startActivity(intent)
         }
 
         etxt_bollo.setOnClickListener {
-            val dpd = DatePickerDialog(context,
-                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!,
+                DatePickerDialog.OnDateSetListener { _, mYear, mMonth, mDay ->
                     etxt_bollo.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()
         }
 
         etxt_rca.setOnClickListener {
-            val dpd = DatePickerDialog(context,
-                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!,
+                DatePickerDialog.OnDateSetListener { _, mYear, mMonth, mDay ->
                     etxt_rca.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()
         }
 
         etxt_rev.setOnClickListener {
-            val dpd = DatePickerDialog(context,
-                DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+            val dpd = DatePickerDialog(context!!,
+                DatePickerDialog.OnDateSetListener { _, mYear, mMonth, mDay ->
                     etxt_rev.text = (""+mDay+"/"+mMonth+"/"+mYear)}, year, month, day)
 
             dpd.show()
