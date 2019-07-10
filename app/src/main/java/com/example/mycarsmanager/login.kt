@@ -44,6 +44,16 @@ class login : Fragment() {
         }
 
         txt_regist.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_login_to_registro) }
+
+        txt_changepsw.setOnClickListener {
+            val email = etxt_mail.text.toString()
+            if (email == ""){
+                Toast.makeText(context!!,"Inserire prima la mail nel campo E-Mail.", Toast.LENGTH_SHORT).show()
+            }else{
+                FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                Toast.makeText(context!!,"Ti arriverà una mail di reset password.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun entra(view: View){

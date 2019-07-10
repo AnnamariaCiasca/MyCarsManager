@@ -12,13 +12,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.delete_form.view.*
-import kotlinx.android.synthetic.main.fragment_addcar.*
 import kotlinx.android.synthetic.main.fragment_description_car.*
 import kotlinx.android.synthetic.main.fragment_description_car.etxt_model
 import kotlinx.android.synthetic.main.fragment_description_car.etxt_owner
@@ -35,7 +35,6 @@ class description_car : Fragment() {
     private val mStorage = FirebaseStorage.getInstance()
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
-    private val docutente = mStore.collection("Utenti").document("$id")
     private val c = Calendar.getInstance()
     private val year = c.get(Calendar.YEAR)
     private val month = c.get(Calendar.MONTH)
@@ -59,9 +58,12 @@ class description_car : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
         val model = arguments?.getString("Model")
         val owner = arguments?.getString("Owner")
+        val uid = arguments?.getString("Codice")
         val filename = "$model"+"_$owner"
+        val docutente = mStore.collection("Utenti").document("$uid")
         val docucar = docutente.collection("Vettura").document(filename)
 
         txt_macchina.text=model
@@ -87,7 +89,7 @@ class description_car : Fragment() {
             }
 
         btn_delete.setOnClickListener {
-            showdialog(filename, view)
+            showdialog(filename, view, uid)
         }
 
         btn_back.setOnClickListener{
@@ -186,7 +188,7 @@ class description_car : Fragment() {
 
     }
 
-    private fun showdialog(filename: String, view: View) {
+    private fun showdialog(filename: String, view: View, uid: String?) {
         val mDialogView = LayoutInflater.from(activity).inflate(R.layout.delete_form, null)
 
         val mBuilder = AlertDialog.Builder(activity)
@@ -203,11 +205,17 @@ class description_car : Fragment() {
 
         mDialogView.btn_accept_delete.setOnClickListener {
             mAlertDialog.dismiss()
-            cancella(filename, view)
+            if (uid==id){
+                cancella(filename, view, uid)
+            }else{
+                Toast.makeText(context!!,"Non puoi eliminare una macchina non creata da te.", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
-    private fun cancella(file: String, view: View){
+    private fun cancella(file: String, view: View, uid: String?){
+        val docutente = mStore.collection("Utenti").document("$uid")
         val docucar = docutente.collection("Vettura").document(file)
         val imgcar = mStorage.getReference("/img_car/$file")
         imgcar.delete()

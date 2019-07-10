@@ -20,8 +20,8 @@
     <fragment android:id="@+id/spese" android:name="com.example.mycarsmanager.spese" android:label="fragment_spese"
               tools:layout="@layout/fragment_spese">
         <action android:id="@+id/action_spese_to_dashboard3" app:destination="@id/dashboard3"/>
-        <action android:id="@+id/action_spese_to_addspesa" app:destination="@id/addspesa"/>
         <action android:id="@+id/action_spese_to_piechart" app:destination="@id/piechart"/>
+        <action android:id="@+id/action_spese_to_selectcar_addspesa" app:destination="@id/selectcar_addspesa"/>
     </fragment>
     <fragment android:id="@+id/family" android:name="com.example.mycarsmanager.Family" android:label="fragment_cerca"
               tools:layout="@layout/fragment_family">
@@ -53,10 +53,16 @@
     </fragment>
     <fragment android:id="@+id/addspesa" android:name="com.example.mycarsmanager.addspesa"
               android:label="fragment_addspesa" tools:layout="@layout/fragment_addspesa">
+        <action android:id="@+id/action_addspesa_to_selectcar_addspesa" app:destination="@id/selectcar_addspesa"/>
         <action android:id="@+id/action_addspesa_to_spese" app:destination="@id/spese"/>
     </fragment>
     <fragment android:id="@+id/piechart" android:name="com.example.mycarsmanager.piechart"
               android:label="fragment_piechart" tools:layout="@layout/fragment_piechart">
         <action android:id="@+id/action_piechart_to_spese" app:destination="@id/spese"/>
+    </fragment>
+    <fragment android:id="@+id/selectcar_addspesa" android:name="com.example.mycarsmanager.selectcar_addspesa"
+              android:label="fragment_selectcar_addspesa" tools:layout="@layout/fragment_selectcar_addspesa">
+        <action android:id="@+id/action_selectcar_addspesa_to_addspesa" app:destination="@id/addspesa"/>
+        <action android:id="@+id/action_selectcar_addspesa_to_spese" app:destination="@id/spese"/>
     </fragment>
 </navigation>

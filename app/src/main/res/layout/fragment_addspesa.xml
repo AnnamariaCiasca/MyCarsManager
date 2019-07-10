@@ -55,10 +55,6 @@
             android:id="@+id/linearLayout3">
         <Spinner
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/spin_car_add" android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"/>
-        <Spinner
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/spinner_title_add" android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"/>
         <EditText

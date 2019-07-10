@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="wrap_content" android:layout_margin="8dp"
+                                             android:paddingBottom="8dp" android:background="@color/colorPrimary">
+
+    <View
+            android:layout_width="wrap_content"
+            android:layout_height="50dp" android:id="@+id/view5" android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+            android:text="Seleziona Auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txt_title_select" style="@style/titoli_form"
+            app:layout_constraintStart_toStartOf="@id/view5" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="@id/view5"
+            app:layout_constraintTop_toTopOf="@id/view5" app:layout_constraintBottom_toBottomOf="@+id/view5"/>
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/view5" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:id="@+id/recycler_show_spesa"/>
+</android.support.constraint.ConstraintLayout>

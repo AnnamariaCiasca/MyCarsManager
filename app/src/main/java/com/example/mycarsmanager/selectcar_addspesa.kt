@@ -12,16 +12,13 @@ import android.widget.LinearLayout
 import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.fragment_garage.*
-import kotlin.math.log
+import kotlinx.android.synthetic.main.fragment_selectcar_addspesa.*
 
 
-class garage : Fragment() {
+class selectcar_addspesa : Fragment() {
 
     private val mAuth = FirebaseAuth.getInstance()
     private val mStore = FirebaseFirestore.getInstance()
-    private val mStorage = FirebaseStorage.getInstance()
     private val utente = mAuth?.currentUser
     private val id = utente?.uid
     private val docutente = mStore.collection("Utenti").document("$id")
@@ -33,19 +30,16 @@ class garage : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_garage, container, false)
+        return inflater.inflate(R.layout.fragment_selectcar_addspesa, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        menu.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_garage_to_dashboard3) }
-
-        btn_dialog.setOnClickListener { Navigation.findNavController(view).navigate(R.id.action_garage_to_addcar)}
 
         docutente.get()
             .addOnCompleteListener {
                 val famiglia = it.result!!.getString("Famiglia").toString()
-                car_list.layoutManager= LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
+                recyclercar_spese.layoutManager= LinearLayoutManager(activity, LinearLayout.VERTICAL, false)
 
                 if (famiglia == ""){
 
@@ -64,7 +58,7 @@ class garage : Fragment() {
                                 cars.add(macchina)
                             }
                             Log.d("Garage","$cars")
-                            car_list.adapter= CarAdapter(cars)
+                            recyclercar_spese.adapter= AddcarspeseAdapetr(cars)
                         }
                 }else{
                     Log.d("Garage", "$famiglia")
@@ -96,7 +90,7 @@ class garage : Fragment() {
                                             cars.add(macchina)
                                         }
                                         Log.d("Garage","$cars")
-                                        car_list?.adapter= CarAdapter(cars)
+                                        recyclercar_spese.adapter= AddcarspeseAdapetr(cars)
 
                                     }
                             }
@@ -107,6 +101,11 @@ class garage : Fragment() {
                 }
             }
 
+        btn_indietro_spese.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_selectcar_addspesa_to_spese)
+        }
+
     }
+
 
 }

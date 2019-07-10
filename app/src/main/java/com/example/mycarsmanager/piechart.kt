@@ -27,11 +27,6 @@ class piechart : Fragment(), OnChartValueSelectedListener {
 
     private val mAuth = FirebaseAuth.getInstance()
     private val mStore = FirebaseFirestore.getInstance()
-    private val utente = mAuth?.currentUser
-    private val id = utente?.uid
-    private val docutente = mStore.collection("Utenti").document("$id")
-    private val docucar = docutente.collection("Vettura")
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,6 +46,10 @@ class piechart : Fragment(), OnChartValueSelectedListener {
         super.onViewCreated(view, savedInstanceState)
 
         val file = arguments?.getString("File").toString()
+        val id = arguments?.getString("Codice").toString()
+
+        val docutente = mStore.collection("Utenti").document("$id")
+        val docucar = docutente.collection("Vettura")
         val docuspesa = docucar.document("$file").collection("Spese")
 
         docuspesa.get()

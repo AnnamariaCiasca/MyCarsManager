@@ -14,18 +14,11 @@
             app:layout_constraintEnd_toEndOf="parent" android:background="@color/colorPrimaryDark"/>
     <TextView
             android:text="Famiglia"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textAlignment="center" android:textColor="@color/colorAccent"
-            android:id="@+id/titolo_family" android:fontFamily="@font/carter_one"
-            android:shadowDx="0" android:shadowDy="4" android:shadowRadius="4"
-            android:shadowColor="@android:color/black"
-            android:textSize="48sp"
+            android:id="@+id/titolo_family"
             app:layout_constraintTop_toTopOf="@id/testata_family"
             app:layout_constraintBottom_toBottomOf="@id/testata_family"
             app:layout_constraintEnd_toEndOf="@id/testata_family"
-            app:layout_constraintStart_toStartOf="@id/testata_family"/>
+            app:layout_constraintStart_toStartOf="@id/testata_family" style="@style/TitleGrande"/>
     <ImageView
             android:src="@drawable/menu"
             android:layout_width="50dp"

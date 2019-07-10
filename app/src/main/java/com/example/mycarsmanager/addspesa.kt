@@ -3,6 +3,7 @@ package com.example.mycarsmanager
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,19 +36,17 @@ class addspesa : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        addSpinnerAuto()
+        val model = arguments?.getString("Model")
+        val owner = arguments?.getString("Owner")
+        val uid = arguments?.getString("Codice")
+
+        val docutente = mStore.collection("Utenti").document("$uid")
+        val docucar = docutente.collection("Vettura")
+
+        val file = model+"_"+owner
+
         addSpinnerTitle()
 
-        spin_car_add?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-
-            }
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                filename.text = parent?.selectedItem.toString()
-            }
-
-        }
 
         spinner_title_add?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -64,18 +63,19 @@ class addspesa : Fragment() {
             val title = title.text.toString()
             val desc = etxt_desc.text.toString()
             val prezzo = etxt_spesa.text.toString()
-            val file = filename.text.toString()
 
             if (title.isEmpty() || desc.isEmpty() || prezzo.isEmpty()){
                 Toast.makeText(activity,"Compila tutti i Campi.", Toast.LENGTH_SHORT).show()
             }
+
 
             val docuspesa = docucar.document(file).collection("Spese").document(title+desc+prezzo)
 
             val spesa = hashMapOf(
                 "Titolo" to title,
                 "Descrizione" to desc,
-                "Prezzo" to prezzo
+                "Prezzo" to prezzo,
+                "Codice" to uid
             )
 
             docuspesa.set(spesa as Map<String, Any>)
@@ -85,30 +85,9 @@ class addspesa : Fragment() {
         }
 
         btn_cancel_spesa.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_addspesa_to_spese)
+            Navigation.findNavController(view).navigate(R.id.action_addspesa_to_selectcar_addspesa)
         }
 
-    }
-
-    private fun addSpinnerAuto(){
-        docucar.get()
-            .addOnSuccessListener {
-                val cars = ArrayList<String>()
-
-                for(document in it){
-                    val model = document.getString("Modello").toString()
-                    val owner = document.getString("Owner").toString()
-
-                    cars.add(model+"_"+owner)
-                }
-
-                val adap = ArrayAdapter(activity, android.R.layout.simple_spinner_item,cars)
-
-                adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-                spin_car_add?.adapter= adap
-
-            }
     }
 
     private fun addSpinnerTitle(){

@@ -154,7 +154,8 @@ class Family : Fragment() {
 
                 val componente = hashMapOf(
                     "Nome" to nomecomponente,
-                    "img_url" to img_url
+                    "img_url" to img_url,
+                    "codice" to uid
                 )
 
                 val docucomponenti = docufamiglia.document(nomefamiglia).collection("Componenti").document(nomecomponente)
